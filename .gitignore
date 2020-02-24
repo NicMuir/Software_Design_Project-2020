@@ -42,6 +42,7 @@ __pycache__/
 .idea/WSCSite.iml
 .idea/modules.xml
 .idea/vcs.xml
+.idea
 
 # Python #
 *.py[cod]
