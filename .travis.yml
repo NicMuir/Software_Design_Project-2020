@@ -1,0 +1,29 @@
+language: python
+# Existing Python versions
+python:
+#  - 3.6
+#  - 3.7-dev # python 3.7 is not supported in Travis CI yet :/
+# Enable 3.7 without globally enabling sudo and dist: xenial for other build jobs
+matrix: # work around for using python 3.7
+  include:
+    - python: 3.7
+      dist: xenial
+      sudo: true
+services:
+  - mysql
+env:
+  -DJANGO=2.17 DB=mysql # might need to be DJANJO=2.17
+install:
+  - pip install -r requirements.txt
+  - pip install django-widget-tweaks
+  - pip install coverage
+before_script:
+  - mysql -e 'create database test;' -u root
+script:
+  - python manage.py makemigrations
+  - python manage.py migrate
+#  - python manage.py test tests
+  - coverage run --source='.' manage.py test tests
+
+after_success:
+  - coveralls
