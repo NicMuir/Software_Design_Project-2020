@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log In</title>
+</head>
+<body>
+    Basic Login with no UI:
+    <form method="post">
+{#        Just uses 'input' and 'p'#}
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+    </form>
+</body>
+</html>
