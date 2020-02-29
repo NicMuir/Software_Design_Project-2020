@@ -1,0 +1,15 @@
+[run]
+omit =
+        *manage.py*
+        */venv/*
+        */__init__.py
+        */migrations/*
+source =
+        .
+
+[report]
+omit =
+        *manage.py*
+        */venv/*
+        */__init__.py
+        */migrations/*
