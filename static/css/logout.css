@@ -1,7 +1,27 @@
-p {
-    color: blue; 
+body {
+    background-color: darkgrey;
 }
 
-body {
+.display-middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
+.display-top-middle {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+div {
+    display: block;
+}
+
+h1 {
+    font-weight: 400;
+    margin: 10px 0;
+    font-size: 64px !important;
 }
