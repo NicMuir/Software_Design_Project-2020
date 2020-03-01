@@ -23,7 +23,7 @@ script:
   - python manage.py makemigrations
   - python manage.py migrate
 #  - python manage.py test tests
-  - coverage run --source='.' manage.py test tests
+  - coverage run manage.py test tests
 
 after_success:
   - coveralls
