@@ -1,16 +1,26 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <!--Boostrap CDN linkup-->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+    <!--Link to static files-->
+    <link href="{% static 'css/login.css' %}" rel="stylesheet" >
+    
     <meta charset="UTF-8">
     <title>Log In</title>
 </head>
-<body>
-    Basic Login with no UI:
-    <form method="post">
-{#        Just uses 'input' and 'p'#}
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Login</button>
-    </form>
-</body>
+            <body class = "text-center">
+                <form class="form-signin" method="post">
+                    <h1 class=" h1 mb-3 font-weight-normal">Please log in</h1>
+                    {#        Just uses 'input' and 'p'#}
+                            {% csrf_token %}
+                            {{ form.as_p }}
+        
+                            <button class = "btn btn-lg btn-primary btn-block" type="submit">Log in</button>
+                </form>
+            </body>
 </html>
