@@ -3,6 +3,10 @@
 
  }
 
+ .navbar-col {
+    background-color: #43d8c9;
+ }
+
  h1 {
      display: flex;
      align-items: center;

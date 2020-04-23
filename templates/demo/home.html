@@ -8,17 +8,16 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <!--Link to static files-->
     <link href="{% static 'css/homepage.css' %}" rel="stylesheet" >
+    <link href="{% static 'css/w3.css' %}" rel="stylesheet" >
     <meta charset="UTF-8">
     <title>Home</title>
 </head>
 <body>
-    <div class = "container">
-        <header class = "blog-header py-3">
-            <div class = "row flex-nowrap justify-content-between align-items-center">
-                <h1 class = "blog-header-logo text-dark">Welcome Home</h1>
-            </div>
-        </header>
-        <a class ="btn btn-lg btn-outline-primary" href="/accounts/logout">Logout</a>
+        <div class = "w3-bar navbar-col">
+            <a href="#" class="w3-bar-item w3-button">Welcome Home</a>
+            <a href="#" class="w3-bar-item w3-button">Link 1</a>
+            <a href="#" class="w3-bar-item w3-button">Link 2</a>
+            <a href="/accounts/logout" class="w3-bar-item w3-button">Logout</a>
     </div>
 </body>
 </html>
