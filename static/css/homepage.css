@@ -1,5 +1,5 @@
  body {
-    background-color: #f5f5f5;
+    background-color: #696969;
 
  }
 
@@ -9,11 +9,10 @@
  .Orng-col{background-color: #F19F4D;}
  .Rightalign{float: right}
 
-.topnav a:hover {
-  background-color: #F19F4D;
-  color: black;
-}
-
+ .Blue-wr{color: #4484CE;}
+ .White-wr{color: #D9D9D9;}
+ .Yellow-wr{color: #F9CF00;}
+ .Orng-wr{color: #F19F4D;}
 .serif {
   font-family: "Times New Roman", Times, serif;
 }
@@ -35,15 +34,16 @@
  }
 
 .cent {
-    background-image: url("bgr.jpg");
-    background-repeat: no-repeat;
+    background-image: url("Images/bgr.jpg");
+    object-fit: scale-down;
+    background-repeat: no-repeat, repeat;
     position: absolute;
     transform: translate(-50%, -50%);
     left: 50%;
-    top: 40%;
-    border: 3px solid #73AD21;
-    padding : 100px;
-
+    top: 30%;
+    padding : 300px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 
