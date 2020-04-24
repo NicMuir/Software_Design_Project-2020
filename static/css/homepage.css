@@ -34,9 +34,6 @@
  }
 
 .cent {
-    background-image: url("Images/bgr.jpg");
-    object-fit: scale-down;
-    background-repeat: no-repeat, repeat;
     position: absolute;
     transform: translate(-50%, -50%);
     left: 50%;
@@ -44,6 +41,10 @@
     padding : 300px;
     padding-top: 50px;
     padding-bottom: 50px;
+}
+.centre{
+position: relative;
+padding :50px;
 }
 
 
