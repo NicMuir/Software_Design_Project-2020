@@ -3,13 +3,50 @@
 
  }
 
- .navbar-col {
-    background-color: #43d8c9;
-    background-repeat: repeat;
- }
+ .blue-col{background-color: #4484CE;}
+ .White-col{background-color: #D9D9D9;}
+ .yellow-col{background-color: #F9CF00;}
+ .Orng-col{background-color: #F19F4D;}
+ .Rightalign{float: right}
+
+.topnav a:hover {
+  background-color: #F19F4D;
+  color: black;
+}
+
+.serif {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.sansserif {
+  font-family: "Arial", Helvetica, sans-serif;
+}
+
+.monospace {
+  font-family: "Lucida Console", Courier, monospace;
+}
+
 
  h1 {
+     font-family: "Lucida Console", Courier, monospace;
      display: flex;
      align-items: center;
      justify-content: center;
  }
+
+.cent {
+    background-image: url("bgr.jpg");
+    background-repeat: no-repeat;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 40%;
+    border: 3px solid #73AD21;
+    padding : 100px;
+
+}
+
+
+
+
+
