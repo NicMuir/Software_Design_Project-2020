@@ -4,4 +4,5 @@ from . import views
 # Create your views here.
 urlpatterns = [
     path('', views.home, name='home')
+    #path('',views.PredictStudent,name="Predict Student")
 ]
