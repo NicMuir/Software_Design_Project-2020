@@ -8,6 +8,9 @@ class Student(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
 
+    # ML Predict Dta
+    # prediction = models.CharField(max_length=2)
+
     def __str__(self):
         return "{} {}({})".format(self.first_name, self.last_name, self.student_no)
 
