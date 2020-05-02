@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class ="body">
 <head>
     <meta charset="UTF-8">
     <title>{{ object }}</title> {# object specifies model being used by DetailView#}
 </head>
 <body>
+    <!-- Navbar -->
+        <div class="w3-top">
+      <div class="w3-bar w3-black w3-card">
+        <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        <a href="/home.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-center">STUDENT PREDICTOR</a>
+        <a href="/accounts/logout" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">LOGOUT</a>
+      </div>
+    </div>
 Hi I'm {{ object }}
 </body>
 </html>
