@@ -2,9 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{ object }}</title> {# object specifies model being used by DetailView#}
+    <title>{{ object }}</title> {# object specifies model being used by DetailView - '__str__' converts object to string#}
 </head>
 <body>
 Hi I'm {{ object }}
+{# 'object' corresponds to the current student model object but can be represented as a string if needed #}
+{# Below is how you reference each value in the student model #}
+{{ object.student_no }} <br>
+{{ object.full_name }} <br>
+{{ object.aggregate_YOS1 }} <br>
+{{ object.aggregate_YOS2 }} <br>
+{{ object.coms_avg_YOS1 }} <br>
+{{ object.coms_avg_YOS2 }} <br>
+{{ object.maths_avg_YOS1 }} <br>
+{{ object.maths_avg_YOS2 }} <br>
+{# Below is how to call a method that does not require arguments #}
+{# prediction_text returns the text/description of the prediction char - look in models.py#}
+{{ object.prediction_text }} <br>
+
 </body>
 </html>
