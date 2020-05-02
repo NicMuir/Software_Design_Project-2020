@@ -4,12 +4,16 @@ body {
     width: 100%;
     align-items: center;
     padding: 20em;
-    background-color: #f5f5f5;
+    background-color: #696969;
 }
 
 p {
     color: grey; 
     font-size: 2em;
+}
+
+.butn-col{
+    background-color:black !importan;
 }
 
 
