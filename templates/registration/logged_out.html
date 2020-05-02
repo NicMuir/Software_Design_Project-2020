@@ -2,17 +2,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--Boostrap CDN linkup-->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    
     <!--Link to static files-->
-     <link href="{% static 'css/logout.css' %}" rel="stylesheet" >
+     <link href="{% static 'css/standard-site.css' %}" rel="stylesheet" >
+     <link href="{% static 'css/bootstrap.css' %} " rel="stylesheet">
+
+     <!--Custom Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet"> 
+
     <meta charset="UTF-8">
-    <title>Log Out</title>
+    <title>Logged Out</title>
 </head>
 <body>
-<div class = "display-top-middle">
-    <h1>You have logged out</h1>
+    <h1 class = "site-heading text-center text-white d-none d-lg-block">
+    <span class="site-heading-lower">you are logged out</span>
+    </h1>
+    <div class="container text-center ">
+    <a class="btn std-button text-white" href="/demo">&#x2794; Click here to log in</a>
+    </div>
 </div>
 </body>
 </html>

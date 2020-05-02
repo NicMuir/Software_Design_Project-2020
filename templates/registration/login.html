@@ -3,24 +3,29 @@
 <html lang="en">
 <head>
 
-    <!--Boostrap CDN linkup-->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 
     <!--Link to static files-->
-    <link href="{% static 'css/login.css' %}" rel="stylesheet" >
-    
+    <link href="{% static 'css/standard-site.css' %}" rel="stylesheet" >
+    <link href="{% static 'css/bootstrap.css' %} " rel="stylesheet">
+    <!--Custom Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">     
     <meta charset="UTF-8">
     <title>Log In</title>
 </head>
             <body class = "text-center">
-                <form class="form-signin" method="post">
-                    <h1 class=" h1 mb-3 font-weight-normal">Please log in</h1>
+                <h1 class = "site-heading text-center text-white d-none d-lg-block">
+                    <span class="site-heading-lower">please log in</span>
+                </h1>
+                <div class = "intro-text left-0 text-center bg-faded p-5 rounded">
+                <form class="form-signin text-purple" method="post">
+                   
                     {#        Just uses 'input' and 'p'#}
                             {% csrf_token %}
                             {{ form.as_p }}
         
-                            <button class = "btn btn-lg btn-primary btn-block" type="submit">Log in</button>
+                            <button class = "btn btn-lg std-button text-white" type="submit">&#x2794; Click here to log in</button>
                 </form>
+            </div>
             </body>
 </html>
