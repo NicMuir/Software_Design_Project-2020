@@ -8,6 +8,7 @@ import pandas as pd
 
 # Create your views here.
 # Class based views
+# @login_required
 class ShowAllStudentsView(generic.ListView):
     template_name = 'student_predictor/show_all_students.html'
     context_object_name = 'alphabetical_students'
@@ -16,11 +17,13 @@ class ShowAllStudentsView(generic.ListView):
         return Student.objects.order_by('first_name')
 
 
+# @login_required
 class ShowStudentView(generic.DetailView):
     model = Student
     template_name = "student_predictor/show_student.html"
 
 
+# @login_required
 class PredictStudentView(generic.CreateView):
     model = Student
     fields = ['student_no','first_name', 'last_name', 'aggregate_YOS1', 'aggregate_YOS2',
