@@ -11,27 +11,31 @@
     <div class="w3-top">
        <div class="w3-bar w3-black w3-card">
         <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-        <a href="/demo" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-        <a href="/students/Showall" class="w3-bar-item w3-button w3-padding-large">SHOW ALL STUDENTS</a>
-        <a href="#" class="w3-bar-item w3-button w3-padding-large">SHOW STUDENT</a>
-        <a href="/students/predict" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-center">STUDENT PREDICTOR</a>
+        <a href="{% url 'demo:home' %}" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+        <a href=" {% url 'student_predictor:show_all_students' %}" class="w3-bar-item w3-button w3-padding-large">SHOW ALL STUDENTS</a>
+{#        <a href="#" class="w3-bar-item w3-button w3-padding-large">SHOW STUDENT</a>#}
+        <a href="{% url 'student_predictor:predict_student' %}" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-center">STUDENT PREDICTOR</a>
         <a href="/accounts/logout" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">LOGOUT</a>
       </div>
     </div>
-Hi I'm {{ object }}
-{# 'object' corresponds to the current student model object but can be represented as a string if needed #}
-{# Below is how you reference each value in the student model #}
-{{ object.student_no }} <br>
-{{ object.full_name }} <br>
-{{ object.aggregate_YOS1 }} <br>
-{{ object.aggregate_YOS2 }} <br>
-{{ object.coms_avg_YOS1 }} <br>
-{{ object.coms_avg_YOS2 }} <br>
-{{ object.maths_avg_YOS1 }} <br>
-{{ object.maths_avg_YOS2 }} <br>
-{# Below is how to call a method that does not require arguments #}
-{# prediction_text returns the text/description of the prediction char - look in models.py#}
-{{ object.prediction_text }} <br>
+    <div>
+{#        Hi I'm {{ object }}#}
+        {# 'object' corresponds to the current student model object but can be represented as a string if needed #}
+        {# Below is how you reference each value in the student model #}
+        {# Make this look fancy pls #}
+        <h1 style="margin-top:46px">{{object.full_name }}</h1>
+        Student No: {{ object.student_no }} <br>
+        First Year Overall Average: {{ object.aggregate_YOS1 }} <br>
+        Second Year Overall Average: {{ object.aggregate_YOS2 }} <br>
+        First Year COMS Average: {{ object.coms_avg_YOS1 }} <br>
+        Second Year COMS Average: {{ object.coms_avg_YOS2 }} <br>
+        First Year MATHS Average: {{ object.maths_avg_YOS1 }} <br>
+        Second Year MATHS Average: {{ object.maths_avg_YOS2 }} <br>
+        {# Below is how to call a method that does not require arguments #}
+        {# prediction_text returns the text/description of the prediction char - look in models.py#}
+{#        Put in some element to bring attention to this pls#}
+        Predicted Outcome: {{ object.prediction_text }} <br>
+    </div>
 
 </body>
 </html>
