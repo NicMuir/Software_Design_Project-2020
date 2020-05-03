@@ -1,0 +1,135 @@
+/*standardised css classes not in bootstrap*/
+/*aesthetic classes*/
+
+body {
+  font-family: 'Lora';
+  background-image: linear-gradient(90deg, rgba(96,32,128,0.6) 20%, rgba(32,32,96,0.6) 50%, rgba(32,32,64,0.6) 78%), url("../img/bg.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Raleway';
+}
+
+p {
+  line-height: 1.75; 
+}
+
+.text-faded {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+
+.bg-faded {
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+.std-button {
+  background-color: #b030b0;
+  border-color: #e6a756;
+}
+/*-----------------------------------------------*
+
+
+/*structure classes*/
+.site-heading {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  text-transform: uppercase;
+  line-height: 1;
+  font-family: 'Raleway';
+}
+
+.site-heading .site-heading-upper {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.site-heading .site-heading-lower {
+  font-size: 5rem;
+  font-weight: 100;
+  line-height: 4rem;
+}
+
+#mainNav {
+  background-color:#202040;
+  font-family: 'Raleway';
+}
+
+#mainNav .navbar-brand {
+  color: #ffffff;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 800;
+}
+
+#mainNav .navbar-nav .nav-item.active .nav-link {
+  color: #b030b0;
+}
+
+.page-section {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.section-heading {
+  text-transform: uppercase;
+}
+
+.section-heading .section-heading-upper {
+  display: block;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.section-heading .section-heading-lower {
+  display: block;
+  font-size: 3rem;
+  font-weight: 100;
+}
+
+.intro {
+  position: relative;
+}
+
+/*media queries (mobile responsiveness)*/
+@media (min-width: 992px) {
+  .intro .intro-img {
+    width: 75%;
+    float: right;
+  }
+  .intro .intro-text {
+    left: 0;
+    width: 60%;
+    margin-top: 3rem;
+    position: absolute;
+  }
+  .intro .intro-text .intro-button {
+    width: 100%;
+    left: 0;
+    position: absolute;
+    bottom: -2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .intro .intro-text {
+    width: 45%;
+  }
+}
+
+
+/*minmal css for specific pages*/
+/*logged out*/
