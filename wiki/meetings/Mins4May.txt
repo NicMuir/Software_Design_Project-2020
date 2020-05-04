@@ -1,0 +1,28 @@
+Minutes
+
+4 may 12:00
+Attended
+Ritso
+Simon
+Soni
+Nic
+Nasiem
+
+suggestions regarding algorithm and accuracy
+ui improvements to the other pages
+
+More training data ()
+Use smote -> sampling data 
+Equal samples per class.
+Sample new instances etc (Fixed sample sizes per class)
+
+—SMOTE— Because of real world samples
+
+Other way -> Gaussian distribution (Partition 3 ways)
+
+Cross validation 
+
+
+
+
+
