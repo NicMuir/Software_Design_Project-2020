@@ -5,17 +5,18 @@
 
     <!--Link to static files-->
 {#    There is no file that corresponds to this...#}
-    <link href="{% static 'css/standard-site.css' %}" rel="stylesheet" >
     <link href="{% static 'css/w3.css' %}" rel="stylesheet" >
+    <link href="{% static 'css/standard-site.css' %}" rel="stylesheet" >
+
     <link href="{% static 'css/bootstrap.css' %} " rel="stylesheet">
 
     <meta charset="UTF-8">
     <title>Predict Student</title>
 </head>
-<body class="monospace" style="background-color:#696969;" >
+<body >
     <!-- Navbar -->
         <div class="w3-top">
-        <div class="w3-bar w3-black w3-card">
+        <div class="w3-bar w3-purple w3-card">
         <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
         <a href="{% url 'demo:home' %}" class="w3-bar-item w3-button w3-padding-large">HOME</a>
         <a href="{% url 'student_predictor:show_all_students' %}" class="w3-bar-item w3-button w3-padding-large">SHOW ALL STUDENTS</a>
@@ -25,10 +26,10 @@
       </div>
     </div>
 
-    <h1 style="margin-top:46px">Predict Student</h1>
-    <form method="post">{% csrf_token %}
+    <h1 class = "site-heading text-white">Predict Student</h1>
+    <form class = "text-white site-heading" method="post">{% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Update">
+        <input class="btn std-button btn-xl text-white" type="submit" value="Update">
     </form>
 </body>
 </html>
