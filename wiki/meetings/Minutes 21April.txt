@@ -1,0 +1,9 @@
+Meeting - All members April 21 2020
+
+Points discussed
+-Making sure all members can use repo on git etc.
+-Sprint 2 goals and progression
+-Discussing and allocating Architecture Diagrams
+-Discussing machine learning principles to be used
+-Setting aside a day to learn case testing
+-Frontend design allocation
