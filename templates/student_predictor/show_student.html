@@ -49,20 +49,21 @@
         </div>
       </div>
     </nav>
-Hi I'm {{ object }}
-{# 'object' corresponds to the current student model object but can be represented as a string if needed #}
-{# Below is how you reference each value in the student model #}
-{{ object.student_no }} <br>
-{{ object.full_name }} <br>
-{{ object.aggregate_YOS1 }} <br>
-{{ object.aggregate_YOS2 }} <br>
-{{ object.coms_avg_YOS1 }} <br>
-{{ object.coms_avg_YOS2 }} <br>
-{{ object.maths_avg_YOS1 }} <br>
-{{ object.maths_avg_YOS2 }} <br>
-{# Below is how to call a method that does not require arguments #}
-{# prediction_text returns the text/description of the prediction char - look in models.py#}
-{{ object.prediction_text }} <br>
-
+    <div class = "container navbar-dark text-center text-white Student-CentreBox">
+        For Student: {{ object }}<br>
+        {# 'object' corresponds to the current student model object but can be represented as a string if needed #}
+        {# Below is how you reference each value in the student model #}
+        Student Number :{{ object.student_no }} <br>
+        Full Name :{{ object.full_name }} <br>
+        Aggregate_YOS1:{{ object.aggregate_YOS1 }} <br>
+        Aggregate_YOS2:{{ object.aggregate_YOS2 }} <br>
+        coms_avg_YOS1:{{ object.coms_avg_YOS1 }} <br>
+        coms_avg_YOS2:{{ object.coms_avg_YOS2 }} <br>
+        maths_avg_YOS1:{{ object.maths_avg_YOS1 }} <br>
+        maths_avg_YOS2:{{ object.maths_avg_YOS2 }} <br>
+        {# Below is how to call a method that does not require arguments #}
+        {# prediction_text returns the text/description of the prediction char - look in models.py#}
+        Predicted Outcome:{{ object.prediction_text }} <br>
+</div>
 </body>
 </html>

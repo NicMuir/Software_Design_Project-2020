@@ -21,7 +21,7 @@ h6 {
 }
 
 p {
-  line-height: 1.75; 
+  line-height: 1.75;
 }
 
 .text-faded {
@@ -77,6 +77,12 @@ p {
 
 #mainNav .navbar-nav .nav-item.active .nav-link {
   color: #b030b0;
+}
+.Student-CentreBox{
+  width: 320px;
+  padding: 10px;
+  background-color:#fff;
+  margin: 0;
 }
 
 .page-section {
