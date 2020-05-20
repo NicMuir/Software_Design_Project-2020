@@ -51,10 +51,11 @@
         </div>
       </div>
     </nav>
-
+  <div class = "container navbar-dark text-center text-white ">
     <form method="post" style="margin-top:46px">{% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="Update">
     </form>
+  </div>
 </body>
 </html>

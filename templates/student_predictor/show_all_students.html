@@ -52,18 +52,20 @@
         </div>
       </div>
     </nav>
-<h1 style="margin-top:46px">List of Students</h1>
-{# alphabetical_students is just a list of all student model objects, ordered by full_name #}
-{% if alphabetical_students %}
-    <ul>
-    {% for student in alphabetical_students %}
-        {# Block of code is run for each student #}
-        {# Look in show_student.html for how to access other attributes #}
-        <li><a href="{% url 'student_predictor:show_student' student.id %}">{{ student.full_name}}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    No students exist.
-{% endif %}
+    <div class = "container navbar-dark text-center text-white ">
+          <h1 style="margin-top:46px">List of Students</h1>
+          {# alphabetical_students is just a list of all student model objects, ordered by full_name #}
+          {% if alphabetical_students %}
+              <ul>
+              {% for student in alphabetical_students %}
+                  {# Block of code is run for each student #}
+                  {# Look in show_student.html for how to access other attributes #}
+                  <li> Student:<a style ="font-size: large" class = "text-center site-heading-upper "href="{% url 'student_predictor:show_student' student.id %}">{{ student.full_name}}</a></li>
+              {% endfor %}
+              </ul>
+          {% else %}
+              No students exist.
+          {% endif %}
+</div>
 </body>
 </html>
