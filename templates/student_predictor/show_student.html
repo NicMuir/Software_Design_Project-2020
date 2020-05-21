@@ -2,23 +2,43 @@
 <!DOCTYPE html>
 <html lang="en" class ="body">
 <head>
-    <link href="{% static 'css/w3.css' %}" rel="stylesheet" >
+  <link href="{% static 'css/standard-site.css' %}" rel="stylesheet" >
+  <link href="{% static 'css/w3.css' %}" rel="stylesheet" >
+  <link href="{% static 'css/bootstrap.css' %} " rel="stylesheet">
     <meta charset="UTF-8">
     <title>{{ object }}</title> {# object specifies model being used by DetailView - '__str__' converts object to string#}
 </head>
 <body>
-    <!-- Navbar -->
-    <div class="w3-top">
-       <div class="w3-bar w3-purple w3-card">
-        <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-        <a href="{% url 'demo:home' %}" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-        <a href=" {% url 'student_predictor:show_all_students' %}" class="w3-bar-item w3-button w3-padding-large">SHOW ALL STUDENTS</a>
-{#        <a href="#" class="w3-bar-item w3-button w3-padding-large">SHOW STUDENT</a>#}
-        <a href="{% url 'student_predictor:predict_student' %}" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-center">STUDENT PREDICTOR</a>
-        <a href="/accounts/logout" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">LOGOUT</a>
+  <h1 class="site-heading text-center text-white d-none d-lg-block" id = "meh">
+    <span class="site-heading-upper text-primary mb-3 site-heading">A We Thought This Was Cam Production</span>
+    <span class="site-heading-lower">The Student Predictor</span>
+  </h1>
+    <!---Navigation Section--->
+    <nav class="navbar navbar-expand-lg navbar-dark py-lg-4 site-heading text-center" id="mainNav">
+      <div class = "container">
+        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">The Student Predictor</a><!--mobile view-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!--the navbar itself-->
+        <div class = "collapse navbar-collapse" id="navbarResponsive">
+          <ul class= "navbar-nav mx-auto">
+            <li class="nav-item active px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="{% url 'demo:home' %}">Home</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="{% url 'student_predictor:show_all_students' %}">Show All STudents</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="{% url 'student_predictor:predict_student' %}" >student predictor</a>
+            </li>
+            <li class = "nav-item px-lg-4">
+              <a class  = "nav-link text-uppercase text-expanded" href="/accounts/logout">Logout</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-    <div>
+    </nav>
 {#        Hi I'm {{ object }}#}
         {# 'object' corresponds to the current student model object but can be represented as a string if needed #}
         {# Below is how you reference each value in the student model #}
