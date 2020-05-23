@@ -52,7 +52,7 @@
         {# Look in show_student.html for how to access other attributes #}
         <button type="button" class="collapsible">{{student.full_name}} {{ student.student_no }} {{ student.prediction_text }}</button>
           <div class="content">
-            <p href="{% url 'student_predictor:show_student' student.id %}">{{ student.full_name}} {{ student.student_no }} {{ student.prediction_text }}></p>
+            <p href="{% url 'student_predictor:show_student' student.id %}">{{ student.full_name}} {{ student.student_no }} {{ student.prediction_text }} </p>
           </div>
           {% endfor %}
     </ul>

@@ -5,24 +5,15 @@
 
     <!--Link to static files-->
 {#    There is no file that corresponds to this...#}
-<<<<<<< HEAD
-    <link href="{% static 'css/w3.css' %}" rel="stylesheet" >
-   
-    <link href="{% static 'css/standard-site.css' %}" rel="stylesheet" >
-    <link href="{% static 'css/bootstrap.css' %} " rel="stylesheet">
-=======
 <link href="{% static 'css/standard-site.css' %}" rel="stylesheet" >
 <link href="{% static 'css/w3.css' %}" rel="stylesheet" >
 <link href="{% static 'css/bootstrap.css' %} " rel="stylesheet">
->>>>>>> d3e4016a5db7d760744568ba14f7989a4ffda90b
-
-    
 
     <meta charset="UTF-8">
     <title>Predict Student</title>
 </head>
 <body >
-    <h1 class="site-heading text-center text-white d-none d-lg-block" id = "meh">
+    <h1 class="site-heading text-center text-white d-none d-lg-block">
     <span class="site-heading-upper text-primary mb-3 site-heading">A We Thought This Was Cam Production</span>
     <span class="site-heading-lower">The Student Predictor</span>
   </h1>
@@ -52,14 +43,7 @@
         </div>
       </div>
     </nav>
-
-
-
     <!--<h1 class = "site-heading text-center text-white d-none d-lg-block text-primary mb-3 site-heading-lower">Predict Le Student</h1>-->
-    <h1 class="site-heading text-center text-white d-none d-lg-block">
-        <span class="site-heading-upper text-primary mb-3">A We Thought This Was Cam Production</span>
-        <span class="site-heading-lower">Predict A Student</span>
-      </h1>
     <form class = "text-white site-heading" method="post">{% csrf_token %}
         {{ form.as_p }}
         <input class="btn std-button btn-xl text-white" type="submit" name="update" value="Update">
