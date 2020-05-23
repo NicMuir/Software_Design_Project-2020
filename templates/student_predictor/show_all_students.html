@@ -24,7 +24,7 @@
         <!--the navbar itself-->
         <div class = "collapse navbar-collapse" id="navbarResponsive">
           <ul class= "navbar-nav mx-auto">
-            <li class="nav-item active px-lg-4">
+            <li class="nav-item px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href="{% url 'demo:home' %}">Home</a>
             </li>
             <li class="nav-item px-lg-4">
@@ -50,19 +50,15 @@
     {% for student in alphabetical_students %}
         {# Block of code is run for each student #}
         {# Look in show_student.html for how to access other attributes #}
-        <button type="button" class="collapsible">{{student.full_name}}</button>
+        <button type="button" class="collapsible">{{student.full_name}} {{ student.student_no }} {{ student.prediction_text }}</button>
           <div class="content">
-            <p href="{% url 'student_predictor:show_student' student.id %}">{{ student.full_name}}></p>
-            <p href="{% url 'student_predictor:show_student' student.id %}">{{ student.student_no }} </p>
-            <p href="{% url 'student_predictor:show_student' student.id %}">{{ student.prediction_text }} </p>
+            <p href="{% url 'student_predictor:show_student' student.id %}">{{ student.full_name}} {{ student.student_no }} {{ student.prediction_text }}></p>
           </div>
           {% endfor %}
     </ul>
-
 {% else %}
     No students exist.
 {% endif %}
-
 <script type="text/javascript">
    var selected_student_no = "{{selected_student_no}}";
    console.log(selected_student_no);
@@ -106,7 +102,6 @@
 <script>
 var coll = document.getElementsByClassName("collapsible");
 var i;
-
 for (i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
     this.classList.toggle("active");
