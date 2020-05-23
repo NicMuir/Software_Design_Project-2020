@@ -87,6 +87,10 @@ p {
   color: #b030b0;
 }
 
+.margin-students {
+  padding: 25px;
+}
+
 .margin-predict {
   margin-left: 20em;
   margin-right: 20em;
