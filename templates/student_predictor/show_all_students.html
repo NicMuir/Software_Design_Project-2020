@@ -46,11 +46,11 @@
 <h1 class="site-heading text-white">List of Students</h1>
 {# alphabetical_students is just a list of all student model objects, ordered by full_name #}
 {% if alphabetical_students %}
-    <ul class = "text-black">
+    <ul class = "text-black centre">
     {% for student in alphabetical_students %}
         {# Block of code is run for each student #}
         {# Look in show_student.html for how to access other attributes #}
-        <button type="button" class="collapsible">{{student.full_name}} {{ student.student_no }} {{ student.prediction_text }}</button>
+        <button type="button" class="collapsible" id = {{student.full_name}}>{{student.full_name}} {{ student.student_no }} {{ student.prediction_text }}</button>
           <div class="content">
             <p href="{% url 'student_predictor:show_student' student.id %}"> Year of Study Average 1: {{student.aggregate_YOS1}} %</p>
             <p href="{% url 'student_predictor:show_student' student.id %}"> Year of Study Average 2: {{student.aggregate_YOS2}} %</p>
@@ -85,8 +85,6 @@ for (i = 0; i < coll.length; i++) {
   });
 }
 </script>
-
-
 </body>
 <style>
 .collapsible {
