@@ -2,37 +2,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="{% static 'css/w3.css' %}" rel="stylesheet" >
-    <link href="{% static 'css/standard-site.css' %}" rel="stylesheet" >
-
+  <link href="{% static 'css/standard-site.css' %}" rel="stylesheet" >
+  <link href="{% static 'css/w3.css' %}" rel="stylesheet" >
+  <link href="{% static 'css/bootstrap.css' %} " rel="stylesheet">
     <meta charset="UTF-8">
 
     <title>Show All Students</title>
 </head>
 <body>
-<!-- Navbar -->
-    <div class="w3-top">
-        <div class="w3-bar w3-purple w3-card">
-        <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-        <a href="{% url 'demo:home' %}" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-{#        <a href="#" class="w3-bar-item w3-button w3-padding-large">SHOW ALL STUDENTS</a>#}
-{#        <a href="/students/show_student" class="w3-bar-item w3-button w3-padding-large">SHOW STUDENT</a>#}
-        <a href="{% url 'student_predictor:predict_student'%}" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-center">STUDENT PREDICTOR</a>
-        <a href="/accounts/logout" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">LOGOUT</a>
+  <h1 class="site-heading text-center text-white d-none d-lg-block">
+    <span class="site-heading-upper text-primary mb-3 site-heading">A We Thought This Was Cam Production</span>
+    <span class="site-heading-lower">The Student Predictor</span>
+  </h1>
+    <!---Navigation Section--->
+    <nav class="navbar navbar-expand-lg navbar-dark py-lg-4 site-heading text-center" id="mainNav">
+      <div class = "container">
+        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">The Student Predictor</a><!--mobile view-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!--the navbar itself-->
+        <div class = "collapse navbar-collapse" id="navbarResponsive">
+          <ul class= "navbar-nav mx-auto">
+            <li class="nav-item active px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="{% url 'demo:home' %}">Home</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="{% url 'student_predictor:show_all_students' %}">Show All STudents</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="{% url 'student_predictor:predict_student' %}" >student predictor</a>
+            </li>
+            <li class = "nav-item px-lg-4">
+              <a class  = "nav-link text-uppercase text-expanded" href="/accounts/logout">Logout</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-<h1 class="site-heading-lower text-white">List of Students</h1>
+    </nav>
+
+
+
+<h1 class="site-heading text-white">List of Students</h1>
 {# alphabetical_students is just a list of all student model objects, ordered by full_name #}
 {% if alphabetical_students %}
     <ul class = "text-white">
     {% for student in alphabetical_students %}
         {# Block of code is run for each student #}
         {# Look in show_student.html for how to access other attributes #}
-        <li><a class = "text-white" href="{% url 'student_predictor:show_student' student.id %}">{{ student.full_name}}</a></li>
-    {% endfor %}
+        <button type="button" class="collapsible">{{student.full_name}}</button>
+          <div class="content">
+            <p href="{% url 'student_predictor:show_student' student.id %}">{{ student.full_name}}></p>
+            <p href="{% url 'student_predictor:show_student' student.id %}">{{ student.student_no }} </p>
+            <p href="{% url 'student_predictor:show_student' student.id %}">{{ student.prediction_text }} </p>
+          </div>
+          {% endfor %}
     </ul>
+
 {% else %}
     No students exist.
 {% endif %}
+
+<script type="text/javascript">
+   var selected_student_no = "{{selected_student_no}}";
+   console.log(selected_student_no);
+</script>
+
 </body>
+<style>
+.collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+.active, .collapsible:hover {
+  background-color: #ccc;
+}
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+.collapsible:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: white;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+</style>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
+}
+</script>
+
 </html>

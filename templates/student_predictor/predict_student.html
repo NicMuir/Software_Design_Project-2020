@@ -5,10 +5,16 @@
 
     <!--Link to static files-->
 {#    There is no file that corresponds to this...#}
+<<<<<<< HEAD
     <link href="{% static 'css/w3.css' %}" rel="stylesheet" >
    
     <link href="{% static 'css/standard-site.css' %}" rel="stylesheet" >
     <link href="{% static 'css/bootstrap.css' %} " rel="stylesheet">
+=======
+<link href="{% static 'css/standard-site.css' %}" rel="stylesheet" >
+<link href="{% static 'css/w3.css' %}" rel="stylesheet" >
+<link href="{% static 'css/bootstrap.css' %} " rel="stylesheet">
+>>>>>>> d3e4016a5db7d760744568ba14f7989a4ffda90b
 
     
 
@@ -16,17 +22,38 @@
     <title>Predict Student</title>
 </head>
 <body >
-    <!-- Navbar -->
-        <div class="w3-top">
-        <div class="w3-bar w3-purple w3-card">
-        <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-        <a href="{% url 'demo:home' %}" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-        <a href="{% url 'student_predictor:show_all_students' %}" class="w3-bar-item w3-button w3-padding-large">SHOW ALL STUDENTS</a>
-{#        <a href="/students/show_student" class="w3-bar-item w3-button w3-padding-large">SHOW STUDENT</a>#}
-{#        <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-center">STUDENT PREDICTOR</a>#}
-        <a href="/accounts/logout" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">LOGOUT</a>
+    <h1 class="site-heading text-center text-white d-none d-lg-block" id = "meh">
+    <span class="site-heading-upper text-primary mb-3 site-heading">A We Thought This Was Cam Production</span>
+    <span class="site-heading-lower">The Student Predictor</span>
+  </h1>
+    <!---Navigation Section--->
+    <nav class="navbar navbar-expand-lg navbar-dark py-lg-4 site-heading text-center" id="mainNav">
+      <div class = "container">
+        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">The Student Predictor</a><!--mobile view-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!--the navbar itself-->
+        <div class = "collapse navbar-collapse" id="navbarResponsive">
+          <ul class= "navbar-nav mx-auto">
+            <li class="nav-item active px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="{% url 'demo:home' %}">Home</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="{% url 'student_predictor:show_all_students' %}">Show All STudents</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="{% url 'student_predictor:predict_student' %}" >student predictor</a>
+            </li>
+            <li class = "nav-item px-lg-4">
+              <a class  = "nav-link text-uppercase text-expanded" href="/accounts/logout">Logout</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
+    </nav>
+
+
 
     <!--<h1 class = "site-heading text-center text-white d-none d-lg-block text-primary mb-3 site-heading-lower">Predict Le Student</h1>-->
     <h1 class="site-heading text-center text-white d-none d-lg-block">
@@ -35,7 +62,7 @@
       </h1>
     <form class = "text-white site-heading" method="post">{% csrf_token %}
         {{ form.as_p }}
-        <input class="btn std-button btn-xl text-white" type="submit" value="Update">
+        <input class="btn std-button btn-xl text-white" type="submit" name="update" value="Update">
     </form>
 </body>
 </html>
