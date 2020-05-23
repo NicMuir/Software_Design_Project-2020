@@ -50,11 +50,68 @@
     {% for student in alphabetical_students %}
         {# Block of code is run for each student #}
         {# Look in show_student.html for how to access other attributes #}
-        <li><a class = "text-white" href="{% url 'student_predictor:show_student' student.id %}">{{ student.full_name}}</a></li>
-    {% endfor %}
+        <button type="button" class="collapsible">{{student.full_name}}</button>
+          <div class="content">
+            <p href="{% url 'student_predictor:show_student' student.id %}">{{ student.full_name}}></p>
+            <p href="{% url 'student_predictor:show_student' student.id %}">{{ student.student_no }} </p>
+            <p href="{% url 'student_predictor:show_student' student.id %}">{{ student.prediction_text }} </p>
+          </div>
+          {% endfor %}
     </ul>
+
 {% else %}
     No students exist.
 {% endif %}
 </body>
+<style>
+.collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+.active, .collapsible:hover {
+  background-color: #ccc;
+}
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+.collapsible:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: white;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+</style>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
+}
+</script>
+
 </html>
