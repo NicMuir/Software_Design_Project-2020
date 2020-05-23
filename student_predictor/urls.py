@@ -14,4 +14,8 @@ urlpatterns = [
 
     path('predict', login_required(views.PredictStudentView.as_view()), name='predict_student'),
     path('predict/<int:pk>/', login_required(views.RePredictStudentView.as_view()), name='re_predict_student'),
+
+    # PredictMultiStudentView
+
+    path('multipredict/', login_required(views.PredictMultiStudentView.as_view()), name='predict_multi_student'),
 ]

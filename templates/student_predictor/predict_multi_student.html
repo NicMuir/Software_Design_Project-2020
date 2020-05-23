@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form class = "text-white site-heading" method="post" enctype="multipart/form-data">{% csrf_token %}
+        {{ form.as_p }}
+        <input class="btn std-button btn-xl text-white" type="submit" name="upload_file" value="Upload File">
+    </form>
+</body>
+</html>

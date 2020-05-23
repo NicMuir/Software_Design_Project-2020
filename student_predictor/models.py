@@ -17,7 +17,6 @@ class Student(models.Model):
 
     prediction = models.CharField(max_length=2)
 
-    # TODO - return all data needed to get prediction for student
     def predict_data(self):
         out_data = dict(
             AggregateYOS1=[self.aggregate_YOS1],

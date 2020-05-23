@@ -51,10 +51,5 @@
         {{ form.as_p }}
         <input class="btn std-button btn-xl text-white" type="submit" name="update" value="Update">
     </form>
-
-    <form class = "text-white site-heading" method="post">{% csrf_token %}
-        {{ file_upload_form.as_p }}
-        <input class="btn std-button btn-xl text-white" type="submit" name="upload_file" value="Upload File">
-    </form>
 </body>
 </html>
