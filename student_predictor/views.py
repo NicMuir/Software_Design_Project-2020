@@ -105,6 +105,7 @@ class PredictMultiStudentView(generic.FormView):
             stud_data = pd.DataFrame.from_dict(data_dict)
 
             temp_student.prediction = StudentPredictorConfig.svc_predictor.predict(stud_data)[0]
+            temp_student.save()
             #
             # # check if student no already exists
             # if not Student.objects.filter(student_no=temp_student.student_no).exists():
@@ -143,7 +144,7 @@ class RePredictStudentView(generic.UpdateView):
     model = Student
     fields = ['student_no', 'first_name', 'last_name', 'aggregate_YOS1', 'aggregate_YOS2',
               'coms_avg_YOS1', 'coms_avg_YOS2', 'maths_avg_YOS1', 'maths_avg_YOS2']
-    template_name = "student_predictor/re_predict_student.html"
+    template_name = "student_predictor/predict_student.html"
 
     # If student model is created successfully run following code to add predicted data
     def form_valid(self, form):
