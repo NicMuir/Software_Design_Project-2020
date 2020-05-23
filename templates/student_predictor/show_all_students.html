@@ -61,6 +61,7 @@
             <p href="{% url 'student_predictor:show_student' student.id %}"> Year of Study Coms 2:    {{student.coms_avg_YOS2}} %</p>
             <p href="{% url 'student_predictor:show_student' student.id %}"> Year of Study Maths 1:   {{student.maths_avg_YOS1}} %</p>
             <p href="{% url 'student_predictor:show_student' student.id %}"> Year of Study Maths 2:   {{student.maths_avg_YOS2}} %</p>
+            <input class="btn std-button btn-xl text-white" href ="{% url 'student_predictor:re_predict_student' student.id %}" type="submit" name="repredict" value="Repredic">
           </div>
           {% endfor %}
     </ul>
