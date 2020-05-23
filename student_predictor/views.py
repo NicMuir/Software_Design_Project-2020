@@ -2,9 +2,10 @@ from django.shortcuts import render, HttpResponse, Http404, get_object_or_404
 from .models import *
 from .forms import *
 
-from django.urls import reverse
+from django.shortcuts import render, redirect
+from django.urls import reverse, reverse_lazy, resolve
 from django.views import generic
-from django.urls import resolve
+
 from .apps import StudentPredictorConfig
 import pandas as pd
 
@@ -26,13 +27,17 @@ class ShowAllStudentsView(generic.ListView):
 
         if "student_pk" in self.kwargs.keys():
             try:
-                context['selected_student'] = Student.objects.get(pk=self.kwargs["student_pk"])
+                selected_student = Student.objects.get(pk=self.kwargs["student_pk"])
+                context['selected_student'] = selected_student
+                context['selected_student_no'] = selected_student.student_no
             except Student.DoesNotExist:
                 print("Student does not exist")
                 context['selected_student'] = None
+                context['selected_student_no'] = None
         else:
             print("student_pk was not in kwargs")
             context['selected_student'] = None
+            context['selected_student_no'] = None
 
         return context
 
@@ -73,10 +78,64 @@ class PredictStudentView(generic.CreateView):
             ctx['file_upload_form'] = UploadFileForm()
         return ctx
 
+    # def post(self, request, *args, **kwargs):
+    #     out = super().post(self, request, *args, **kwargs)
+    #     return out
+
+
+# TODO - TEST (No idea if this will work)
+class PredictMultiStudentView(generic.FormView):
+    template_name = 'student_predictor/predict_multi_student.html'
+    success_url = reverse_lazy('student_predictor:show_all_students')
+    form_class = UploadFileForm
+
+    @staticmethod
+    def handle_file(file):
+        df = pd.read_csv(file)
+
+        # create and predict student via data given in row of dataframe
+        def predict_and_save(row):
+            row_dict = row.to_dict()
+
+            # row_dict should be of right format as this should be validated in form
+            # if student with given student number exists simply update the values rather than create new instance
+            temp_student, created = Student.objects.update_or_create(student_no=row_dict['student_no'], defaults=row_dict)
+
+            data_dict = temp_student.predict_data()
+            stud_data = pd.DataFrame.from_dict(data_dict)
+
+            temp_student.prediction = StudentPredictorConfig.svc_predictor.predict(stud_data)[0]
+            #
+            # # check if student no already exists
+            # if not Student.objects.filter(student_no=temp_student.student_no).exists():
+            #     temp_student.save()
+            #
+            # else:  # if model already exists just update it
+            #     existing_student = Student.objects.objects.get(student_no=temp_student.student_no)
+            #     existing_student = temp_student
+            #     existing_student.save()
+
+            print(row_dict)
+            return row
+
+        for i in range(0, df.shape[0]):
+            row = df.iloc[i]
+            predict_and_save(row)
+
+        print('Do stuff')
+
+    def get(self, request, *args, **kwargs):
+        form = self.form_class()
+        return render(request, self.template_name, {'form': form})
+
     def post(self, request, *args, **kwargs):
-        out = super().post(self, request, *args, **kwargs)
-        # # https://chriskief.com/2012/12/30/django-class-based-views-with-multiple-forms/
-        return out
+        form = self.form_class(request.POST, request.FILES)
+        if form.is_valid():
+            # form.save()
+            self.handle_file(file=request.FILES['file'])  # error handling will be done in form validator
+            return redirect(self.success_url)
+        else:
+            return render(request, self.template_name, {'form': form})
 
 
 # @login_required
@@ -92,9 +151,6 @@ class RePredictStudentView(generic.UpdateView):
         # Do stuff here
         data_dict = self.object.predict_data()
         stud_data = pd.DataFrame.from_dict(data_dict)
-
-        # TODO - Test
-        # prediction = self.svc_predictor.predict(df_data)
 
         self.object.prediction = StudentPredictorConfig.svc_predictor.predict(stud_data)[0]
 
