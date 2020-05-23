@@ -87,6 +87,12 @@ p {
   color: #b030b0;
 }
 
+.margin-predict {
+  margin-left: 20em;
+  margin-right: 20em;
+  margin-bottom: 20em;
+  background-color: #202040;
+}
 .page-section {
   margin-top: 5rem;
   margin-bottom: 5rem;
@@ -121,7 +127,10 @@ p {
   .intro .intro-text {
     left: 0;
     width: 60%;
-    margin-top: 3rem;
+    margin-top: 3rem;<form class = "text-white site-heading" method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input class="btn std-button btn-xl text-white" type="submit" name="update" value="Update">
+</form>
     position: absolute;
   }
   .intro .intro-text .intro-button {
