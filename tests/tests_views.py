@@ -14,21 +14,5 @@ class TestStudentPredictorViews(SimpleTestCase):
         # You'll need to log in before you can send requests through the client
         self.client.login(username=my_admin.username, password=password)
 
-    # generic.ListView
-    def TestShowAllStudentsView(self):
-        # Do stuff
-        return True
-
-    # generic.CreateView
-    def TestPredictStudentView(self):
-        # Do stuff
-        return True
-
-    def TestPredictMultiStudentView(self):
-        # Do stuff
-        return True
-
-    # generic.UpdateView
-    def TestRePredictStudentView(self):
-        # Do stuff
+    def test_some_case(self):
         return True
