@@ -35,7 +35,7 @@ class Student(models.Model):
         return self.first_name.capitalize() + " " + self.last_name.capitalize()
 
     def get_absolute_url(self):
-        return reverse('student_predictor:show_student', args=(self.pk,))
+        return reverse('student_predictor:show_all_students_selected', args=(self.pk,))
 
     def prediction_text(self):
         if self.prediction == "H":

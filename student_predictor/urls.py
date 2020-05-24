@@ -10,7 +10,7 @@ urlpatterns = [
     # show all students with specific student to show
     path('<int:student_pk>/', login_required(views.ShowAllStudentsView.as_view()), name='show_all_students_selected'),
     # show_student needs to be removed but first, dependencies need to be fixed
-    path('<int:pk>/', login_required(views.ShowStudentView.as_view()), name='show_student'),
+    # path('<int:pk>/', login_required(views.ShowStudentView.as_view()), name='show_student'),
 
     path('predict', login_required(views.PredictStudentView.as_view()), name='predict_student'),
     path('predict/<int:pk>/', login_required(views.RePredictStudentView.as_view()), name='re_predict_student'),

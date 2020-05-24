@@ -42,10 +42,10 @@ class ShowAllStudentsView(generic.ListView):
         return context
 
 
-# @login_required
-class ShowStudentView(generic.DetailView):
-    model = Student
-    template_name = "student_predictor/show_student.html"
+# # @login_required
+# class ShowStudentView(generic.DetailView):
+#     model = Student
+#     template_name = "student_predictor/show_student.html"
 
 
 # @login_required
@@ -78,10 +78,6 @@ class PredictStudentView(generic.CreateView):
             ctx['file_upload_form'] = UploadFileForm()
         return ctx
 
-    # def post(self, request, *args, **kwargs):
-    #     out = super().post(self, request, *args, **kwargs)
-    #     return out
-
 
 # TODO - TEST (No idea if this will work)
 class PredictMultiStudentView(generic.FormView):
@@ -106,24 +102,10 @@ class PredictMultiStudentView(generic.FormView):
 
             temp_student.prediction = StudentPredictorConfig.svc_predictor.predict(stud_data)[0]
             temp_student.save()
-            #
-            # # check if student no already exists
-            # if not Student.objects.filter(student_no=temp_student.student_no).exists():
-            #     temp_student.save()
-            #
-            # else:  # if model already exists just update it
-            #     existing_student = Student.objects.objects.get(student_no=temp_student.student_no)
-            #     existing_student = temp_student
-            #     existing_student.save()
-
-            print(row_dict)
-            return row
 
         for i in range(0, df.shape[0]):
             row = df.iloc[i]
             predict_and_save(row)
-
-        print('Do stuff')
 
     def get(self, request, *args, **kwargs):
         form = self.form_class()
