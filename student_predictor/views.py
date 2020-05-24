@@ -139,6 +139,3 @@ class RePredictStudentView(generic.UpdateView):
 
         self.object.save()
         return out_response
-
-
-

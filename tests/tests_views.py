@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-from django.test import TestCase, Client
-from django.urls import reverse
-from student_predictor.views import ShowAllStudentsView,ShowStudentView,PredictStudentView,PredictMultiStudentView,RePredictStudentView
-#from demo.views
-
-class TestViews(TestCase):
-
-    def get_queryset(self):
-        
-
-        self.client.login(username=my_admin.username, password=password)
-        return self
-=======
 from django.test import SimpleTestCase
 from django.contrib.auth import get_user_model
 
@@ -30,20 +16,23 @@ class TestStudentPredictorViews(SimpleTestCase):
 
     # generic.ListView
     def TestShowAllStudentsView(self):
+        login_as_superuser();
         # Do stuff
         return True
 
     # generic.CreateView
     def TestPredictStudentView(self):
+        login_as_superuser();
         # Do stuff
         return True
 
     def TestPredictMultiStudentView(self):
+        login_as_superuser();
         # Do stuff
         return True
 
     # generic.UpdateView
     def TestRePredictStudentView(self):
+        login_as_superuser();
         # Do stuff
         return True
->>>>>>> b730a4b0e4eb1e5cd5ff1d04b124cb49a6db953b

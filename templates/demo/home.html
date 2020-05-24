@@ -39,13 +39,10 @@
               <a class="nav-link text-uppercase text-expanded" href="/demo">Home</a>
             </li>
             <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="#">About us</a>
-            </li>
-            <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="#">Contact</a>
-            </li>
-            <li class="nav-item px-lg-4">
               <a class="nav-link text-uppercase text-expanded" href={% url 'student_predictor:predict_student' %} >student predictor</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="{% url 'student_predictor:predict_multi_student' %}">Predict Multiple Students</a>
             </li>
             <li class = "nav-item px-lg-4">
               <a class  = "nav-link text-uppercase text-expanded" href="/accounts/logout">Logout</a>
