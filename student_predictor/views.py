@@ -87,6 +87,9 @@ class PredictMultiStudentView(generic.FormView):
 
     @staticmethod
     def handle_file(file):
+        # # seek ensures pointer is at start of file (this may not be the case due to other processes using this file)
+        # file.seek(0)
+
         df = pd.read_csv(file)
 
         # create and predict student via data given in row of dataframe

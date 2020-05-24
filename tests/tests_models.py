@@ -6,6 +6,7 @@ from django.test import Client
 
 
 class TestStudentModel(TestCase):
+    # Run before each test - sets up state of site(database)
     def setUp(self):
         stud_vals = dict(
             student_no=12345,
@@ -23,6 +24,7 @@ class TestStudentModel(TestCase):
         self.temp_stud = Student.objects.create(**stud_vals)
         self.client = Client()
 
+    # Run after each test - restores state of site(database) to how it was previously
     def tearDown(self):
         Student.objects.get(pk=self.temp_stud.pk).delete()
         del self.temp_stud
