@@ -19,5 +19,34 @@ class TestShowAllStudentsView(TestCase):
         # You'll need to log in before you can send requests through the client
         self.client.login(username=my_admin.username, password=password)
 
-    # def test_get_queryset(self):
-    #     return True
+    # generic.ListView
+    def TestShowAllStudentsView(self):
+        login_as_superuser();
+        # Do stuff
+        return True
+
+    # generic.CreateView
+    def TestPredictStudentView(self):
+        login_as_superuser();
+        predict_data_dict = dict(
+            AggregateYOS1=[60.4],
+            AggregateYOS2=[53.2],
+            FYComsAvg=[70.5],
+            SYComsAvg=[67.4],
+            FYMathAvg=[60.3],
+            SYMathAvg=[54.3],
+        )
+        self.assertDictEqual(self.temp_stud.predict_data(), predict_data_dict)
+        # Do stuff
+        return True
+
+    def TestPredictMultiStudentView(self):
+        login_as_superuser();
+        # Do stuff
+        return True
+
+    # generic.UpdateView
+    def TestRePredictStudentView(self):
+        login_as_superuser();
+        # Do stuff
+        return True

@@ -1,10 +1,51 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <link href="{% static 'css/standard-site.css' %}" rel="stylesheet" >
+    <link href="{% static 'css/w3.css' %}" rel="stylesheet" >
+    <link href="{% static 'css/bootstrap.css' %} " rel="stylesheet">
+      <meta charset="UTF-8">
+      <title>Predict Many Students</title>
+      <!--Custom Fonts-->
+      <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
 </head>
+
 <body>
+  <h1 class="site-heading text-center text-white d-none d-lg-block">
+    <span class="site-heading-upper text-primary mb-3 site-heading">A We Thought This Was Cam Production</span>
+    <span class="site-heading-lower">The Student Predictor</span>
+  </h1>
+    <!---Navigation Section--->
+    <nav class="navbar navbar-expand-lg navbar-dark py-lg-4 site-heading text-center" id="mainNav">
+      <div class = "container">
+        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">The Student Predictor</a><!--mobile view-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!--the navbar itself-->
+        <div class = "collapse navbar-collapse" id="navbarResponsive">
+          <ul class= "navbar-nav mx-auto">
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="{% url 'demo:home' %}">Home</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="{% url 'student_predictor:show_all_students' %}">Show All STudents</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="{% url 'student_predictor:predict_student' %}" >student predictor</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="{% url 'student_predictor:predict_multi_student' %}">Predict Multiple Students</a>
+            </li>
+            <li class = "nav-item px-lg-4">
+              <a class  = "nav-link text-uppercase text-expanded" href="/accounts/logout">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <form class = "text-white site-heading" method="post" enctype="multipart/form-data">{% csrf_token %}
         {{ form.as_p }}
         <input class="btn std-button btn-xl text-white" type="submit" name="upload_file" value="Upload File">
