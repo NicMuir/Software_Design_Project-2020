@@ -28,6 +28,15 @@ class TestShowAllStudentsView(TestCase):
     # generic.CreateView
     def TestPredictStudentView(self):
         login_as_superuser();
+        predict_data_dict = dict(
+            AggregateYOS1=[60.4],
+            AggregateYOS2=[53.2],
+            FYComsAvg=[70.5],
+            SYComsAvg=[67.4],
+            FYMathAvg=[60.3],
+            SYMathAvg=[54.3],
+        )
+        self.assertDictEqual(self.temp_stud.predict_data(), predict_data_dict)
         # Do stuff
         return True
 
