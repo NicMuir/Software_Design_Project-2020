@@ -13,3 +13,5 @@ omit =
         */venv/*
         */__init__.py
         */migrations/*
+        */SD_Project/wsgi.py
+        */SD_Project/asgi.py

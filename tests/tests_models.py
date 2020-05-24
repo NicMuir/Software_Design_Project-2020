@@ -21,7 +21,12 @@ class TestStudentModel(TestCase):
             prediction='H',
         )
         self.temp_stud = Student.objects.create(**stud_vals)
-        client = Client()
+        self.client = Client()
+
+    def tearDown(self):
+        Student.objects.get(pk=self.temp_stud.pk).delete()
+        del self.temp_stud
+        del self.client
 
     def login_as_superuser(self):
         # store the password to login later
