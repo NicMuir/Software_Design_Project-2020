@@ -56,9 +56,21 @@ class TestStudentModel(TestCase):
     def test_get_absolute_url(self):
         """Test if url given by student model on update or creation corresponds to a valid page"""
         self.login_as_superuser()
-        response = self.client.get(reverse('student_predictor:show_all_students_selected',
-                                           kwargs={'student_pk': self.temp_stud.pk}))
-        self.assertEqual(response.status_code, 200)
+        # response = self.client.get(reverse('student_predictor:show_all_students_selected',
+        #                                    kwargs={'student_pk': self.temp_stud.pk}))
+        # print(self.temp_stud.get_absolute_url())
+        # print(reverse('student_predictor:show_all_students_selected',
+        #                                    kwargs={'student_pk': self.temp_stud.pk}))
+        self.assertEqual(self.temp_stud.get_absolute_url(),
+                         reverse('student_predictor:show_all_students_selected', kwargs={'student_pk': self.temp_stud.pk}))
 
-    def test_prediction_text(self):
+    def test_prediction_text_high(self):
         self.assertEqual(self.temp_stud.prediction_text(), "High Risk")
+
+    def test_prediction_text_medium(self):
+        self.temp_stud.prediction = 'M'
+        self.assertEqual(self.temp_stud.prediction_text(), "Medium Risk")
+
+    def test_prediction_text_low(self):
+        self.temp_stud.prediction = 'L'
+        self.assertEqual(self.temp_stud.prediction_text(), "Low Risk")
