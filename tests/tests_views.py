@@ -1,8 +1,13 @@
 from django.test import SimpleTestCase
 from django.contrib.auth import get_user_model
+from django.test import TestCase
+from student_predictor.models import Student
+from django.urls import reverse
+from django.contrib.auth import get_user_model
+from django.test import Client
 
 
-class TestStudentPredictorViews(SimpleTestCase):
+class TestShowAllStudentsView(TestCase):
     # This method is run before any other tests i.e. sets up whatever is needed for tests
     def setUp(self):
         self.login_as_superuser()  # Need to be logged in
@@ -14,5 +19,5 @@ class TestStudentPredictorViews(SimpleTestCase):
         # You'll need to log in before you can send requests through the client
         self.client.login(username=my_admin.username, password=password)
 
-    def test_some_case(self):
-        return True
+    # def test_get_queryset(self):
+    #     return True
