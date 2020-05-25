@@ -13,50 +13,52 @@
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
 </head>
 <body>
-  <h1 class="site-heading text-center text-white d-none d-lg-block">
-    <span class="site-heading-upper text-primary mb-3 site-heading">A We Thought This Was Cam Production</span>
-    <span class="site-heading-lower">The Student Predictor</span>
-  </h1>
+{#  <h1 class="site-heading text-center text-white d-none d-lg-block">#}
+{#    <span class="site-heading-upper text-primary mb-3 site-heading">A We Thought This Was Cam Production</span>#}
+{#    <span class="site-heading-lower">The Student Predictor</span>#}
+{#  </h1>#}
+    {% include "includes/header.html" %}
     <!---Navigation Section--->
-    <nav class="navbar navbar-expand-lg navbar-dark py-lg-4 site-heading text-center" id="mainNav">
-      <div class = "container">
-        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">The Student Predictor</a><!--mobile view-->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <!--the navbar itself-->
-        <div class = "collapse navbar-collapse" id="navbarResponsive">
-          <ul class= "navbar-nav mx-auto">
-            <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="{% url 'demo:home' %}">Home</a>
-            </li>
-            <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="{% url 'student_predictor:show_all_students' %}">Show All STudents</a>
-            </li>
-            <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="{% url 'student_predictor:predict_student' %}" >student predictor</a>
-            </li>
-            <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="{% url 'student_predictor:predict_multi_student' %}">Predict Multiple Students</a>
-            </li>
-            <li class = "nav-item px-lg-4">
-              <a class  = "nav-link text-uppercase text-expanded" href="/accounts/logout">Logout</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+{#    <nav class="navbar navbar-expand-lg navbar-dark py-lg-4 site-heading text-center" id="mainNav">#}
+{#      <div class = "container">#}
+{#        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">The Student Predictor</a><!--mobile view-->#}
+{#        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">#}
+{#          <span class="navbar-toggler-icon"></span>#}
+{#        </button>#}
+{#        <!--the navbar itself-->#}
+{#        <div class = "collapse navbar-collapse" id="navbarResponsive">#}
+{#          <ul class= "navbar-nav mx-auto">#}
+{#            <li class="nav-item px-lg-4">#}
+{#              <a class="nav-link text-uppercase text-expanded" href="{% url 'demo:home' %}">Home</a>#}
+{#            </li>#}
+{#            <li class="nav-item px-lg-4">#}
+{#              <a class="nav-link text-uppercase text-expanded" href="{% url 'student_predictor:show_all_students' %}">Show All Students</a>#}
+{#            </li>#}
+{#            <li class="nav-item px-lg-4">#}
+{#              <a class="nav-link text-uppercase text-expanded" href="{% url 'student_predictor:predict_student' %}" >Predict Student</a>#}
+{#            </li>#}
+{#            <li class="nav-item px-lg-4">#}
+{#              <a class="nav-link text-uppercase text-expanded" href="{% url 'student_predictor:predict_multi_student' %}">Predict Multiple Students</a>#}
+{#            </li>#}
+{#            <li class = "nav-item px-lg-4">#}
+{#              <a class  = "nav-link text-uppercase text-expanded" href="/accounts/logout">Logout</a>#}
+{#            </li>#}
+{#          </ul>#}
+{#        </div>#}
+{#      </div>#}
+{#    </nav>#}
+    {% include "includes/navbar.html" %}
 
 
 
-<h1 class="site-heading text-white">List of Students</h1>
+<h1 class="text-center text-white text-uppercase">Show All Students</h1>
 {# alphabetical_students is just a list of all student model objects, ordered by full_name #}
 {% if alphabetical_students %}
     <ul class = "text-black margin-students">
     {% for student in alphabetical_students %}
         {# Block of code is run for each student #}
         {# Look in show_student.html for how to access other attributes #}
-        <button id = "stud_btn_{{ student.student_no }}" type="button" class="collapsible ">{{student.full_name}} {{ student.student_no }} {{ student.prediction_text }}</button>
+        <button id = "stud_btn_{{ student.student_no }}" type="button" class="collapsible ">{{student}} - {{ student.prediction_text }}</button>
           <div class="content">
             <table>
                 <tr><td>Year of Study 1 Overall Average:</td><td>{{student.aggregate_YOS1}}%</td></tr>
@@ -73,6 +75,8 @@
 {% else %}
     No students exist.
 {% endif %}
+
+{% include "includes/footer.html" %}
 
 <script type="text/javascript">
     var selected_student_no = "{{selected_student_no}}"; // Python None will evaluate to the String 'None'

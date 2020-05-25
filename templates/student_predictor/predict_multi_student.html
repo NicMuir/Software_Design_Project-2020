@@ -13,46 +13,54 @@
 </head>
 
 <body>
-  <h1 class="site-heading text-center text-white d-none d-lg-block">
-    <span class="site-heading-upper text-primary mb-3 site-heading">A We Thought This Was Cam Production</span>
-    <span class="site-heading-lower">The Student Predictor</span>
-  </h1>
+{#  <h1 class="site-heading text-center text-white d-none d-lg-block">#}
+{#    <span class="site-heading-upper text-primary mb-3 site-heading">A We Thought This Was Cam Production</span>#}
+{#    <span class="site-heading-lower">The Student Predictor</span>#}
+{#  </h1>#}
+  {% include "includes/header.html" %}
     <!---Navigation Section--->
-    <nav class="navbar navbar-expand-lg navbar-dark py-lg-4 site-heading text-center" id="mainNav">
-      <div class = "container">
-        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">The Student Predictor</a><!--mobile view-->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <!--the navbar itself-->
-        <div class = "collapse navbar-collapse" id="navbarResponsive">
-          <ul class= "navbar-nav mx-auto">
-            <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="{% url 'demo:home' %}">Home</a>
-            </li>
-            <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="{% url 'student_predictor:show_all_students' %}">Show All STudents</a>
-            </li>
-            <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="{% url 'student_predictor:predict_student' %}" >student predictor</a>
-            </li>
-            <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="{% url 'student_predictor:predict_multi_student' %}">Predict Multiple Students</a>
-            </li>
-            <li class = "nav-item px-lg-4">
-              <a class  = "nav-link text-uppercase text-expanded" href="/accounts/logout">Logout</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+{#    <nav class="navbar navbar-expand-lg navbar-dark py-lg-4 site-heading text-center" id="mainNav">#}
+{#      <div class = "container">#}
+{#        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">The Student Predictor</a><!--mobile view-->#}
+{#        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">#}
+{#          <span class="navbar-toggler-icon"></span>#}
+{#        </button>#}
+{#        <!--the navbar itself-->#}
+{#        <div class = "collapse navbar-collapse" id="navbarResponsive">#}
+{#          <ul class= "navbar-nav mx-auto">#}
+{#            <li class="nav-item px-lg-4">#}
+{#              <a class="nav-link text-uppercase text-expanded" href="{% url 'demo:home' %}">Home</a>#}
+{#            </li>#}
+{#            <li class="nav-item px-lg-4">#}
+{#              <a class="nav-link text-uppercase text-expanded" href="{% url 'student_predictor:show_all_students' %}">Show All Students</a>#}
+{#            </li>#}
+{#            <li class="nav-item px-lg-4">#}
+{#              <a class="nav-link text-uppercase text-expanded" href="{% url 'student_predictor:predict_student' %}" >Predict Student</a>#}
+{#            </li>#}
+{#            <li class="nav-item px-lg-4">#}
+{#              <a class="nav-link text-uppercase text-expanded" href="{% url 'student_predictor:predict_multi_student' %}">Predict Multiple Students</a>#}
+{#            </li>#}
+{#            <li class = "nav-item px-lg-4">#}
+{#              <a class  = "nav-link text-uppercase text-expanded" href="/accounts/logout">Logout</a>#}
+{#            </li>#}
+{#          </ul>#}
+{#        </div>#}
+{#      </div>#}
+{#    </nav>#}
+    {% include "includes/navbar.html" %}
 
     <h1 class="text-center text-white text-uppercase">Predict Multi Student</h1>
-    <div class="intro-text left-0 text-center bg-faded p-5 rounded margin-predict">
+    <div class="intro-text left-0 text-white text-center bg-faded p-5 rounded margin-predict">
+        <strong>Upload a csv file to predict/re-predict all the students represented in the file.</strong>
+        <br><br>
+        Note: The format of the headings of the file should be of the format: [student_no,first_name,last_name,aggregate_YOS1,aggregate_YOS2,coms_avg_YOS1,coms_avg_YOS2,
+        maths_avg_YOS1,maths_avg_YOS2]
         <form class = "text-white site-heading" method="post" enctype="multipart/form-data">{% csrf_token %}
             {{ form.as_p }}
             <input class="btn std-button btn-xl text-white" type="submit" name="upload_file" value="Upload File & Predict">
         </form>
     </div>
+
+    {% include "includes/footer.html" %}
 </body>
 </html>
