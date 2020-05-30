@@ -6,6 +6,8 @@ from student_predictor.views import ShowAllStudentsView , PredictStudentView , P
 from django.urls import reverse
 from django.contrib.auth import get_user_model
 from django.test import Client
+import pandas as pd
+from student_predictor.models import Student
 
 
 class TestShowAllStudentsView(TestCase):
@@ -19,6 +21,13 @@ class TestShowAllStudentsView(TestCase):
         my_admin = get_user_model().objects.create_superuser('myuser', 'myemail@test.com', password)
         # You'll need to log in before you can send requests through the client
         self.client.login(username=my_admin.username, password=password)
+
+    # check if handle_file successfully adds 5 students
+    def test_handle_file(self):
+        correct_file = open("test_upload_data/5_students.csv")
+        prev_no_students = Student.objects.count()
+        PredictMultiStudentView.handle_file(correct_file)
+        self.assertEquals(Student.objects.count(), prev_no_students+5)
 
     def test_SASVget(self):
         status_code = 200
