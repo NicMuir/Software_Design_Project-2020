@@ -15,6 +15,7 @@ services:
 env:
   -DJANGO=2.17 DB=mysql # might need to be DJANJO=2.17
 install:
+  - pip install --upgrade pip
   - pip install -r requirements.txt
   - pip install django-widget-tweaks
   - pip install coverage
