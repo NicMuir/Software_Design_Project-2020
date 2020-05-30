@@ -129,7 +129,7 @@ class RePredictStudentView(generic.UpdateView):
     model = Student
     fields = ['student_no', 'first_name', 'last_name', 'aggregate_YOS1', 'aggregate_YOS2',
               'coms_avg_YOS1', 'coms_avg_YOS2', 'maths_avg_YOS1', 'maths_avg_YOS2']
-    template_name = "student_predictor/predict_student.html"
+    template_name = "student_predictor/re_predict_student.html"
 
     # If student model is created successfully run following code to add predicted data
     def form_valid(self, form):
