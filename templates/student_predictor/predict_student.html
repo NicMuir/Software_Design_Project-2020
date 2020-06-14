@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head style="background-color:#696969;">
@@ -16,40 +17,9 @@
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
 </head>
 <body >
-{#    <h1 class="site-heading text-center text-white d-none d-lg-block">#}
-{#    <span class="site-heading-upper text-primary mb-3 site-heading">A We Thought This Was Cam Production</span>#}
-{#    <span class="site-heading-lower">The Student Predictor</span>#}
-{#  </h1>#}
+
     {% include "includes/header.html" %}
     <!---Navigation Section--->
-{#    <nav class="navbar navbar-expand-lg navbar-dark py-lg-4 site-heading text-center" id="mainNav">#}
-{#      <div class = "container">#}
-{#        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">The Student Predictor</a><!--mobile view-->#}
-{#        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">#}
-{#          <span class="navbar-toggler-icon"></span>#}
-{#        </button>#}
-{#        <!--the navbar itself-->#}
-{#        <div class = "collapse navbar-collapse" id="navbarResponsive">#}
-{#          <ul class= "navbar-nav mx-auto">#}
-{#            <li class="nav-item active px-lg-4">#}
-{#              <a class="nav-link text-uppercase text-expanded" href="{% url 'demo:home' %}">Home</a>#}
-{#            </li>#}
-{#            <li class="nav-item px-lg-4">#}
-{#              <a class="nav-link text-uppercase text-expanded" href="{% url 'student_predictor:show_all_students' %}">Show All Students</a>#}
-{#            </li>#}
-{#            <li class="nav-item px-lg-4">#}
-{#              <a class="nav-link text-uppercase text-expanded" href="{% url 'student_predictor:predict_student' %}" >Predict Student</a>#}
-{#            </li>#}
-{#            <li class="nav-item px-lg-4">#}
-{#              <a class="nav-link text-uppercase text-expanded" href="{% url 'student_predictor:predict_multi_student' %}">Predict Multiple Students</a>#}
-{#            </li>#}
-{#            <li class = "nav-item px-lg-4">#}
-{#              <a class  = "nav-link text-uppercase text-expanded" href="/accounts/logout">Logout</a>#}
-{#            </li>#}
-{#          </ul>#}
-{#        </div>#}
-{#      </div>#}
-{#    </nav>#}
     {% include "includes/navbar.html" %}
     <!--<h1 class = "site-heading text-center text-white d-none d-lg-block text-primary mb-3 site-heading-lower">Predict Le Student</h1>-->
     <h1 class="text-center text-white text-uppercase">Predict Student</h1>
