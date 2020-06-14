@@ -2,8 +2,9 @@ from django.test import SimpleTestCase, Client , RequestFactory
 from django.contrib.auth.models import AnonymousUser
 from django.test import TestCase
 from student_predictor.models import Student
+from demo.views import home
 from student_predictor.views import ShowAllStudentsView , PredictStudentView , PredictMultiStudentView , RePredictStudentView
-from django.urls import reverse
+from django.urls import reverse, resolve
 from django.contrib.auth import get_user_model
 from django.test import Client
 import pandas as pd
@@ -52,7 +53,7 @@ class TestViews(TestCase):
         view_class = ShowAllStudentsView
         req = RequestFactory().get('/')
         req.user = AnonymousUser()
-        resp = ShowAllStudentsView.as_view()(req, *[], **{"student_pk": student_pk})
+        resp = ShowAllStudentsView.as_view()(req, *[], **{"student_pk": student_pk})  # corresponds to url kwargs for view
         self.assertEqual(resp.status_code, 200)
 
     # url kwarg with pk of student that does not exist
@@ -63,7 +64,7 @@ class TestViews(TestCase):
         view_class = ShowAllStudentsView
         req = RequestFactory().get('/')
         req.user = AnonymousUser()
-        resp = ShowAllStudentsView.as_view()(req, *[], **{"student_pk": student_pk})
+        resp = ShowAllStudentsView.as_view()(req, *[], **{"student_pk": student_pk})  # corresponds to url kwargs for view
         self.assertEqual(resp.status_code, 200)
 
     def test_SASVget(self):
@@ -79,47 +80,20 @@ class TestViews(TestCase):
         view_class = PredictStudentView
         req = RequestFactory().get('/')
         req.user = AnonymousUser()
-        resp = PredictStudentView.as_view() (req , *[],**{})
-        self.assertEqual(resp.status_code,200)
+        resp = PredictStudentView.as_view()(req, *[], **{})
+        self.assertEqual(resp.status_code, 200)
 
     def test_PMSVget(self):
         status_code = 200
         view_class = PredictMultiStudentView
         req = RequestFactory().get('/')
         req.user = AnonymousUser()
-        resp = PredictMultiStudentView.as_view() (req , *[],**{})
+        resp = PredictMultiStudentView.as_view()(req, *[], **{})
         self.assertEqual(resp.status_code,200)
 
-    # def test_RPSVget(self):
-    #     status_code = 200
-    #     view_class = RePredictStudentView
-    #     req = RequestFactory().get('/')
-    #     req.user = AnonymousUser()
-    #     resp = RePredictStudentView.as_view() (req , *[],**{})
-    #     self.assertEqual(resp.status_code,200)
+    # Test home page view
+    def test_demo_view(self):
+        url = reverse('demo:home')
+        self.assertEquals(resolve(url).func, home)
 
-    # generic.ListView
-    # def TestShowAllStudentsView(self):
-    #
-    #     url = reverse("student_predictor.views.ShowAllStudentsView")
-    #     resp = self.client.get(url)
-    #     self.assertEqual(resp.status_code, 200)
-    #     # Do stuff
 
-    # generic.CreateView
-    # def TestPredictStudentView(self):
-    #
-    #
-    #     # Do stuff
-    #     return True
-
-    # def TestPredictMultiStudentView(self):
-    #
-    #     # Do stuff
-    #     return True
-    #
-    # # generic.UpdateView
-    # def TestRePredictStudentView(self):
-    #
-    #     # Do stuff
-    #     return True
