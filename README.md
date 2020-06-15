@@ -5,4 +5,5 @@ A website that uses machine learning to predict the performance/outcome of a stu
 [![Coverage Status](https://coveralls.io/repos/github/NicMMuir/SDProject/badge.svg?branch=master)](https://coveralls.io/github/NicMMuir/SDProject?branch=master) <br>
 
 <br>
+
 [Taiga Page](https://tree.taiga.io/project/simonrosen42-predicting-student-outcomes-2020-sd-project/backlog)
