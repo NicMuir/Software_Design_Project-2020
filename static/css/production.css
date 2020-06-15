@@ -1,5 +1,9 @@
 /*'A WE THOUGHT THIS WAS CAM PRODUCTION' animation at the bottom of the home page*/
 
+.anim-container{
+  display:flex;
+}
+
 .wrapper {
   position: absolute;
   top: 50%;

@@ -18,16 +18,17 @@
     <!---Navigation Section--->
     {% include "includes/navbar.html" %}
 
-    <h1 class="text-center text-white text-uppercase">Predict Multi Student</h1>
+    <h1 class="text-center text-white text-uppercase">Predict Multiple Student Success</h1>
     <div class="intro-text left-0 text-white text-center bg-faded p-5 rounded margin-predict">
-        <strong>Upload a csv file to predict/re-predict all the students represented in the file.</strong>
+        <strong style="font-size: 1.5rem;">Upload a csv file to predict/re-predict all the students represented in the file.</strong>
         <br><br>
-        Note: The format of the headings of the file should be of the format: [student_no,first_name,last_name,aggregate_YOS1,aggregate_YOS2,coms_avg_YOS1,coms_avg_YOS2,
-        maths_avg_YOS1,maths_avg_YOS2]
         <form class = "text-white site-heading" method="post" enctype="multipart/form-data">{% csrf_token %}
             {{ form.as_p }}
             <input class="btn std-button btn-xl text-white" type="submit" name="upload_file" value="Upload File & Predict">
         </form>
+        &lt;Note: The format of the headings of the file should be of the format: 
+        <br>[ student_no, first_name, last_name, aggregate_YOS1, aggregate_YOS2, coms_avg_YOS1, coms_avg_YOS2,
+         maths_avg_YOS1, maths_avg_YOS2 ]&gt;
     </div>
 
     {% include "includes/footer.html" %}

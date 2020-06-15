@@ -40,7 +40,8 @@
 
 <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
   <h3 style="text-align:center;">About</h3>
-  <p style="color: #808080;">The <b>Student Predictor</b> website predicts COMS 3 student outcomes using machine learning. By entering a students first year and second year average results, the outcome of a students third year result can be predicted.<br>
+  <p style="color: #808080;">The <b>Student Success Predictor</b> exhibits one of the amazing ways machine learning is used behind the scenes to automatically learn and improve from experience without being explicity programmed. This website is built using the Django framework for Python.
+  <br>The <b>Student Predictor</b> website predicts COMS 3 student outcomes using machine learning. By entering a students first year and second year average results, the outcome of a students third year result can be predicted.<br>
   <br>The outcome is displayed in one of three categories. A '<b>Low Risk</b>' outcome represents a student who is most likely to do well in their third year. With a possible final average greater than 60%.
   A '<b>Medium Risk</b>' outcome represents a student who is likely to pass. However, such a student is a borderline case and has a prospect of failing as well. With a possible final average between 45% and 60%.
   And finally a '<b>High Risk</b>' outcome represents a student who is likely to fail. With a possible final average less than 45%. A greater attentiveness would be required by facilitators and student alike. </p>
@@ -51,8 +52,12 @@
 
 <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
   <h3 style="text-align:center;">What does it do?</h3>
-  <p style="color: #808080;">Use the student predictor to input the current marks of a university student and get a prediction of their future marks.
-  The student predictor makes it easy to identify students who are at risk of failing.</p>
+  <p style="color: #808080;">Use the <b>Student Success Predictor</b> to input the current marks of a university student and get a prediction of their future marks.
+  The student predictor makes it easy to identify students who are at risk of failing.
+  <br>On the <b>Predict Student Success</b> page,you are prompted to enter details required to predict the outcome of a students third year coms result, then the final result will be displayed on the Show All Students Data page.
+  <br>If you wish to predict a large number of students outcomes all at once, it can be done on the <b>Predict Multiple Student Success</b> page.
+  <br>The <b>Show All Students Data</b> page displays the final prediction of the students outcome as a <b>Low Risk</b>, <b>Medium Risk</b> or <b>High Risk</b>.
+  <br>To logout the user must simply press the logout button on the <b>Logout</b> page.</p>
 </div>
 
 <div class="bgimg-3">
@@ -70,7 +75,7 @@
     <div class="w3-content" style="max-width:2000px;margin-top:46px; text-align: center;" id ="HOME">
 <!--About-->
             <div class="intro-button mx-auto">
-             <a class="btn std-button btn-xl text-white" href={% url 'student_predictor:predict_student' %}>Predict A Student</a>
+             <a class="btn std-button btn-xl text-white" href={% url 'student_predictor:predict_student' %}>PREDICT STUDENT SUCCESS</a>
            </div>
 
 
@@ -79,28 +84,15 @@
 
     </section>
 
-
-  <div style="position:relative; margin-top:  10%;">
-    <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;">
-
-        <p style=" color: #eee; /*margin-left: 20%;*/ font-size: 20px; font-weight: 500;"><b>A</b></p>
-        <div class="letters"><span class="letter">W</span><span class="letter">e</span><span class="letter"> </span><span class="letter">t</span><span class="letter">h</span><span class="letter">o</span><span class="letter">u</span><span class="letter">g</span><span class="letter">h</span><span class="letter">t</span><span class="letter"> </span><span class="letter">t</span><span class="letter">h</span><span class="letter" style="text-align: center;">i</span><span class="letter">s</span><span class="letter"> </span><span class="letter">w</span><span class="letter">a</span><span class="letter">s</span><span class="letter"> </span><span class="letter">C</span><span class="letter">A</span><span class="letter">M</span>
-        </div>
-        <p style="color: #eee; /*margin-left: 16%;*/ font-size: 20px; font-weight: 600;">PRODUCTION</p>
-
-                    {% include "includes/footer.html" %}
-        {#    <footer class = "footer text-faded text-center py-5">#}
-        {#      <div class="container">#}
-        {#      <p class="m-0 medium" style="color: #808080">WE THOUGHT THIS WAS CAM 2020</p>#}
-        {#      </div>#}
-        {#    </footer>#}
-
+    <div style = "background-color:#282E34; margin-top:  15%;" class = "anim-container text-center">
+      <div style="position:relative;">
+        <div style="color:#ddd;background-color:#282E34;text-align:center;padding:40px 80px;">
+            <p style=" color: #eee; font-size: 20px; font-weight: 500;"><b>A</b></p>
+            <div class="letters"><span class="letter">W</span><span class="letter">e</span><span class="letter"> </span><span class="letter">t</span><span class="letter">h</span><span class="letter">o</span><span class="letter">u</span><span class="letter">g</span><span class="letter">h</span><span class="letter">t</span><span class="letter"> </span><span class="letter">t</span><span class="letter">h</span><span class="letter" style="text-align: center;">i</span><span class="letter">s</span><span class="letter"> </span><span class="letter">w</span><span class="letter">a</span><span class="letter">s</span><span class="letter"> </span><span class="letter">C</span><span class="letter">A</span><span class="letter">M</span>
+            </div>
+            <p style="color: #eee; font-size: 20px; font-weight: 600;">PRODUCTION</p>
+          </div>
+      </div>
     </div>
-  </div>
-
-
-
-
-
 </body>
 </html>
