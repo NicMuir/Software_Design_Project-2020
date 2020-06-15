@@ -1,0 +1,16 @@
+Sprint 2 4th May
+All members except Imraan
+
+
+
+Break up user stories into tasks
+Sprint retrospective
+Diagrams
+ -Deployment - arrows on connectors and artifacts
+for next sprint both logical and dev views
+use case diagrams
+user tests
+
+UI changes
+-bolder heading
+-group colour change
