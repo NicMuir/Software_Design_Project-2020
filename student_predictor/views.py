@@ -13,6 +13,7 @@ import pandas as pd
 # Create your views here.
 # Class based views
 # @login_required
+
 class ShowAllStudentsView(generic.ListView):
     template_name = 'student_predictor/show_all_students.html'
     context_object_name = 'alphabetical_students'
@@ -142,3 +143,6 @@ class RePredictStudentView(generic.UpdateView):
 
         self.object.save()
         return out_response
+
+def Research(request):
+    return render(request,'student_predictor/Research.html')
