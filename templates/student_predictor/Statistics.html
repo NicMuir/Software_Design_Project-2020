@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head style="background-color:#696969;">
+
+    <!--Link to static files-->
+{#    There is no file that corresponds to this...#}
+<link href="{% static 'css/w3.css' %}" rel="stylesheet" >
+<link href="{% static 'css/bootstrap.css' %} " rel="stylesheet">
+<link href="{% static 'css/parallex.css' %}" rel = "stylesheet">
+<link href="{% static 'css/standard-site.css' %}" rel="stylesheet" >
+
+    <title>Research</title>
+</head>
+<body>
+  {% include "includes/header.html" %}
+    <!-------------------------------------------Navigation Section-------------------------------------->
+    {% include "includes/navbar.html" %}
+    <!--------------------------------------------Mid Section/Page Content-------------------------------------->
+    <div style = "color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
+    <h3 class = "text-center">Statistics</h3>
+
+
+    </div>
+</body>
+</html>

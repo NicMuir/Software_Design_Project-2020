@@ -146,3 +146,6 @@ class RePredictStudentView(generic.UpdateView):
 
 def Research(request):
     return render(request,'student_predictor/Research.html')
+
+def Statistics(request):
+    return render(request,'student_predictor/Statistics.html')
