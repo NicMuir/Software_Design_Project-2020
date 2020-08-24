@@ -11,6 +11,9 @@
     <!--Custom Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
 </head>
 <body>
 
@@ -22,6 +25,10 @@
 
 
 <h1 class="text-center text-white text-uppercase">Show All Students</h1>
+
+{# Search/Filter bar #}
+<input type="text" id="myInput" onkeyup="searchFunction()" placeholder="Search for Name or Student Number.." title="Type in a name">
+
 {# alphabetical_students is just a list of all student model objects, ordered by full_name #}
 {% if alphabetical_students %}
     <ul class = "text-black margin-students">
@@ -79,6 +86,29 @@ for (i = 0; i < coll.length; i++) {
   });
 }
 </script>
+
+<script>
+function searchFunction() {
+    var input, filter, li, a, i, txtValue;
+
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    li = document.getElementsByClassName("collapsible");
+
+    for (i = 0; i < li.length; i++) {
+
+        a = li[i];
+        txtValue = a.textContent || a.innerText;
+
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+
 </body>
 <style>
 .collapsible {
@@ -112,6 +142,19 @@ for (i = 0; i < coll.length; i++) {
 .active:after {
   content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
+
+#myInput {
+  background-image: url("http://127.0.0.1:8000/static/img/searchicon.png");
+  background-position: 10px 15px;
+  background-repeat: no-repeat;
+  width: 50%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-top: 80px;
+  margin-left: 25px;
+}
+
 </style>
 
 

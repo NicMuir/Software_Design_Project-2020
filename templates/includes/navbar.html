@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
-    {% load static %}
-    <link href="{% static 'css/standard-site.css' %}" rel="stylesheet" >
-    <link href="{% static 'css/w3.css' %}" rel="stylesheet" >
-    <link href="{% static 'css/bootstrap.css' %} " rel="stylesheet">
+
+    
+
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+  {% load static %}
+  <link href="{% static 'css/dropdown.css' %} " rel="stylesheet">
+  <link href="{% static 'css/standard-site.css' %}" rel="stylesheet" >
+  <!-- paragraphs (<p>) are using standard-site style -->
+  <link href="{% static 'css/w3.css' %}" rel="stylesheet" >
+  <link href="{% static 'css/bootstrap.css' %} " rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
 </head>
+
 <body>
+
     <nav class="navbar navbar-expand-lg navbar-dark py-lg-4 site-heading text-center" id="mainNav">
       <div class = "container">
         <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">The Student Predictor</a><!--mobile view-->
@@ -17,30 +26,51 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <!--the navbar itself-->
+  
         <div class = "collapse navbar-collapse" id="navbarResponsive">
           <ul class= "navbar-nav mx-auto">
-            <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="{% url 'demo:home' %}">Home</a>
+            <li class="nav-item px-lg-4 dropdown">
+              <a class="nav-link text-uppercase text-expanded dropdown-toggle" href="{% url 'demo:home' %}" id="navbarDropdown1" role="button" aria-haspopup="true" aria-expanded="false">Home</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                  <p>Home Page</p>
+              </div>
             </li>
-            <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="{% url 'student_predictor:show_all_students' %}">Show All Students data</a>
+            <li class="nav-item px-lg-4 dropdown">
+              <a class="nav-link text-uppercase text-expanded dropdown-toggle" href="{% url 'student_predictor:show_all_students' %}" id="navbarDropdown1" role="button" aria-haspopup="true" aria-expanded="false">Show All Students data</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                  <p>Find your predicted results here</p>
+              </div>
             </li>
-            <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="{% url 'student_predictor:predict_student' %}" >Predict Student Success</a>
+            <li class="nav-item px-lg-4 dropdown">
+              <a class="nav-link text-uppercase text-expanded dropdown-toggle" href="{% url 'student_predictor:predict_student' %}" id="navbarDropdown1" role="button" aria-haspopup="true" aria-expanded="false">Predict Student Success</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                  <p style="margin-left: 20px; margin-right: 20px">Enter your student marks here</p>
+              </div>
             </li>
-            <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="{% url 'student_predictor:predict_multi_student' %}">Predict Multiple Student success</a>
+            <li class="nav-item px-lg-4 dropdown">
+              <a class="nav-link text-uppercase text-expanded dropdown-toggle" href="{% url 'student_predictor:predict_multi_student' %}" id="navbarDropdown1" role="button" aria-haspopup="true" aria-expanded="false">Predict Multiple Student success</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                  <p>Click here to to do a prediction on multiple students all at once</p>
+              </div>
             </li>
-            <li class = "nav-item px-lg-4">
-              <a class  = "nav-link text-uppercase text-expanded" href="/accounts/logout">Logout</a>
+            <li class = "nav-item px-lg-4 dropdown">
+              <a class  = "nav-link text-uppercase text-expanded dropdown-toggle" href="/accounts/logout" id="navbarDropdown1" role="button" aria-haspopup="true" aria-expanded="false">Logout</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                  <p>Click here to logout or change user</p>
+              </div>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <!--Script -->
+  <!--Script -->
     <script type="javascript">
-    </script>
+      </script>
+    <script src="{% static 'js/jquery-3.5.1.js'%}"></script>
+    <script src = "{% static 'js/bootstrap.js'%}"></script>
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+    <script src = "{% static 'js/dropdown.js'%}"></script>
+
 </body>
 </html>

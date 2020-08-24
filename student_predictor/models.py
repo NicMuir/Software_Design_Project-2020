@@ -29,7 +29,7 @@ class Student(models.Model):
         return out_data
 
     def __str__(self):
-        return "{} {}({})".format(self.first_name, self.last_name, self.student_no)
+        return "{} {} ({})".format(self.first_name, self.last_name, self.student_no)
 
     def full_name(self):
         return self.first_name.capitalize() + " " + self.last_name.capitalize()
