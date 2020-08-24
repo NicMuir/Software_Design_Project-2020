@@ -18,7 +18,6 @@ from django.core import serializers
 class ShowAllStudentsView(generic.ListView):
     template_name = 'student_predictor/show_all_students.html'
     context_object_name = 'alphabetical_students'
-    students_ser = serializers.serialize('json', Student.objects.all())
 
     def get_queryset(self):
         # print(self.kwargs["student_pk"])
