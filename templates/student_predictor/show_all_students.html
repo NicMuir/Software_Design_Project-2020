@@ -32,7 +32,7 @@
           <div class="content">
             <table>
                 <tr><td>Year of Study 1 Overall Average:</td><td>{{student.aggregate_YOS1}}%</td></tr>
-                <tr><td>Year of Study 1 Overall Average:</td><td>{{student.aggregate_YOS2}}%<td></tr>
+                <tr><td>Year of Study 2 Overall Average:</td><td>{{student.aggregate_YOS2}}%<td></tr>
                 <tr><td>Year of Study 1 COMS Average:</td><td>{{student.coms_avg_YOS1}}%</td></tr>
                 <tr><td>Year of Study 2 COMS Average:</td><td>{{student.coms_avg_YOS2}}%</td></tr>
                 <tr><td>Year of Study 1 MATH Average:</td><td>{{student.maths_avg_YOS1}}%</td></tr>
@@ -49,6 +49,23 @@
 {% include "includes/footer.html" %}
 
 <script type="text/javascript">
+    //extract student info into javascript array of student objects
+    var students = [{% for student in alphabetical_students%}
+                    {"name":"{{student.full_name}}",
+                      "stud_no":"{{student.student_no}}",
+                      "year_1":"{{student.aggregate_YOS1}}",
+                      "year_2":"{{student.aggregate_YOS2}}",
+                      "coms_1":"{{student.coms_avg_YOS1}}",
+                      "coms_2":"{{student.coms_avg_YOS2}}",
+                      "math_1":"{{student.maths_avg_YOS1}}",
+                      "math_2":"{{student.maths_avg_YOS2}}"  
+                  },
+                    
+                    {%endfor%}
+                    ]
+    
+    console.log(students);
+
     var selected_student_no = "{{selected_student_no}}"; // Python None will evaluate to the String 'None'
     // console.log(selected_student_no);
     console.log(selected_student_no);
@@ -61,6 +78,10 @@
             stud_btn.scrollIntoView();
         };
     }
+
+    //extract student data from model
+    //let student = {student_no: {{student.aggregate_YOS1}}%, student_name: null, year_1: null, year_2: null,
+      //     coms_1: null, coms_2: null, math_1: null, math_2: null}
 </script>
 
 <script>

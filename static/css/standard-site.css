@@ -163,13 +163,3 @@ p {
 
 /*minmal css for specific pages*/
 /*logged out*/
-#whiteblock {
-  color: #777;
-  background-color:white;
-  text-align:center;
-  padding:50px 80px;
-  text-align: justify;
-  overflow: auto;
-  flex: auto;
-  display: flex;
-}
