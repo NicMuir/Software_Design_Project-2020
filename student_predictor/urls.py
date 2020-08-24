@@ -6,7 +6,7 @@ from . import views
 app_name = 'student_predictor'
 urlpatterns = [
     # <int:student_id>
-    path('', login_required(views.ShowAllStudentsView.as_view()), name='show_all_students'),
+    path('students/', login_required(views.ShowAllStudentsView.as_view()), name='show_all_students'),
 
 
     # show all students with specific student to show
