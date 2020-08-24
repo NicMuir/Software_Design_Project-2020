@@ -29,36 +29,46 @@
   
         <div class = "collapse navbar-collapse" id="navbarResponsive">
           <ul class= "navbar-nav mx-auto">
+
             <li class="nav-item px-lg-4 dropdown">
               <a class="nav-link text-uppercase text-expanded dropdown-toggle" href="{% url 'demo:home' %}" id="navbarDropdown1" role="button" aria-haspopup="true" aria-expanded="false">Home</a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
                   <p>Home Page</p>
               </div>
             </li>
+
             <li class="nav-item px-lg-4 dropdown">
               <a class="nav-link text-uppercase text-expanded dropdown-toggle" href="{% url 'student_predictor:show_all_students' %}" id="navbarDropdown1" role="button" aria-haspopup="true" aria-expanded="false">Show All Students data</a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
                   <p>Find your predicted results here</p>
               </div>
             </li>
+
             <li class="nav-item px-lg-4 dropdown">
               <a class="nav-link text-uppercase text-expanded dropdown-toggle" href="{% url 'student_predictor:predict_student' %}" id="navbarDropdown1" role="button" aria-haspopup="true" aria-expanded="false">Predict Student Success</a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
                   <p style="margin-left: 20px; margin-right: 20px">Enter your student marks here</p>
               </div>
             </li>
+
             <li class="nav-item px-lg-4 dropdown">
               <a class="nav-link text-uppercase text-expanded dropdown-toggle" href="{% url 'student_predictor:predict_multi_student' %}" id="navbarDropdown1" role="button" aria-haspopup="true" aria-expanded="false">Predict Multiple Student success</a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
                   <p>Click here to to do a prediction on multiple students all at once</p>
               </div>
             </li>
+
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="{% url 'student_predictor:Research' %}">Research</a>
+            </li>
+
             <li class = "nav-item px-lg-4 dropdown">
               <a class  = "nav-link text-uppercase text-expanded dropdown-toggle" href="/accounts/logout" id="navbarDropdown1" role="button" aria-haspopup="true" aria-expanded="false">Logout</a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
                   <p>Click here to logout or change user</p>
               </div>
             </li>
+
           </ul>
         </div>
       </div>

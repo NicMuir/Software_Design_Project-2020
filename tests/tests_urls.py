@@ -26,6 +26,10 @@ class TestStudentPredictorUrls(SimpleTestCase):
     def test_predict_multi_student_url(self):
         return True
         # Do Stuff
+        
+    def test_Research_url(self):
+        return True
+        # Do Stuff
 
 
 class TestDemoUrls(SimpleTestCase):
