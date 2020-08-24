@@ -1,6 +1,6 @@
 from django.db import models
 from django.urls import reverse
-
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 # Create your models here.
 class Student(models.Model):
@@ -8,12 +8,12 @@ class Student(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     # ML Predict Data
-    aggregate_YOS1 = models.FloatField()
-    aggregate_YOS2 = models.FloatField()
-    coms_avg_YOS1 = models.FloatField()
-    coms_avg_YOS2 = models.FloatField()
-    maths_avg_YOS1 = models.FloatField()
-    maths_avg_YOS2 = models.FloatField()
+    aggregate_YOS1 = models.FloatField(validators=[MaxValueValidator(100.0), MinValueValidator(0.0)])
+    aggregate_YOS2 = models.FloatField(validators=[MaxValueValidator(100.0), MinValueValidator(0.0)])
+    coms_avg_YOS1 = models.FloatField(validators=[MaxValueValidator(100.0), MinValueValidator(0.0)])
+    coms_avg_YOS2 = models.FloatField(validators=[MaxValueValidator(100.0), MinValueValidator(0.0)])
+    maths_avg_YOS1 = models.FloatField(validators=[MaxValueValidator(100.0), MinValueValidator(0.0)])
+    maths_avg_YOS2 = models.FloatField(validators=[MaxValueValidator(100.0), MinValueValidator(0.0)])
 
     prediction = models.CharField(max_length=2)
 
@@ -29,7 +29,7 @@ class Student(models.Model):
         return out_data
 
     def __str__(self):
-        return "{} {}({})".format(self.first_name, self.last_name, self.student_no)
+        return "{} {} ({})".format(self.first_name, self.last_name, self.student_no)
 
     def full_name(self):
         return self.first_name.capitalize() + " " + self.last_name.capitalize()

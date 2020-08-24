@@ -39,6 +39,10 @@ class TestStudentPredictorUrls(SimpleTestCase):
         self.assertEqual(response.status_code, 302)
         #return True
         # Do Stuff
+        
+    def test_Research_url(self):
+        return True
+        # Do Stuff
 
     def test_Research_url(self):
         response = self.client.get(reverse('student_predictor:Research'))
