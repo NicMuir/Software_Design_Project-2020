@@ -28,6 +28,15 @@ class Student(models.Model):
         )
         return out_data
 
+    HIGH = 'H'
+    LOW = 'L'
+    MEDIUM = 'M'
+    PRED_CHOICES = (
+        (HIGH, 'High'),
+        (LOW, 'Low'),
+        (MEDIUM, 'Medium'),
+    )
+
     def __str__(self):
         return "{} {}({})".format(self.first_name, self.last_name, self.student_no)
 
