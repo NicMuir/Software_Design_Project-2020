@@ -28,13 +28,13 @@ class Student(models.Model):
         )
         return out_data
 
-    HIGH = 'H'
-    LOW = 'L'
-    MEDIUM = 'M'
+    HIGHRISK = 'H'
+    LOWRISK = 'L'
+    MEDIUMRISK = 'M'
     PRED_CHOICES = (
-        (HIGH, 'High'),
-        (LOW, 'Low'),
-        (MEDIUM, 'Medium'),
+        (HIGHRISK, 'High Risk'),
+        (LOWRISK, 'Low Risk'),
+        (MEDIUMRISK, 'Medium Risk'),
     )
 
     def __str__(self):

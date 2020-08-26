@@ -181,7 +181,7 @@ def chart_data(request):
         'title': {'text': 'Student Success Predictor'},
         'subtitle':{'text':'Pie Chart'},
         'series': [{
-            'name': 'Prediction',
+            'name': 'Count',
             'data': list(map(lambda row: {'name': preds[row['prediction']], 'y': row['total']}, dataset))
         }]
     }
