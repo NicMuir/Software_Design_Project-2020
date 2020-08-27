@@ -180,8 +180,11 @@ def chart_data(request):
         'chart': {'type': 'pie'},
         'title': {'text': 'Student Success Predictor'},
         'subtitle':{'text':'Pie Chart'},
+        'tooltip': {
+           'pointFormat': '{series.name}: <br>{point.percentage:.1f} %<br>Count: {point.y}'
+         },
         'series': [{
-            'name': 'Count',
+            'name': 'Percentage',
             'data': list(map(lambda row: {'name': preds[row['prediction']], 'y': row['total']}, dataset))
         }]
     }
