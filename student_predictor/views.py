@@ -2,6 +2,12 @@ from django.shortcuts import render, HttpResponse, Http404, get_object_or_404
 from .models import *
 from .forms import *
 
+import json
+
+from django.db.models import Count, Q
+from django.shortcuts import render
+from django.http import JsonResponse
+
 from django.shortcuts import render, redirect
 from django.urls import reverse, reverse_lazy, resolve
 from django.views import generic
@@ -15,12 +21,13 @@ from django.core import serializers
 # Class based views
 # @login_required
 
+
 class ShowAllStudentsView(generic.ListView):
     template_name = 'student_predictor/show_all_students.html'
     context_object_name = 'alphabetical_students'
 
     def get_queryset(self):
-        # print(self.kwargs["student_pk"])
+        #print(self.kwargs["student_pk"])
         return Student.objects.order_by('first_name')
 
     def get_context_data(self, *, object_list=None, **kwargs):
@@ -150,3 +157,35 @@ def Research(request):
 
 def Statistics(request):
     return render(request,'student_predictor/Statistics.html')
+
+def Test(request):
+    return render(request,'student_predictor/Test.html')
+
+from highcharts.views import (HighChartsMultiAxesView, HighChartsPieView,
+                              HighChartsSpeedometerView, HighChartsHeatMapView, HighChartsPolarView)
+
+
+def chart_data(request):
+    dataset = Student.objects \
+        .values('prediction') \
+        .exclude(prediction='') \
+        .annotate(total=Count('prediction')) \
+        .order_by('prediction')
+
+    preds = dict()
+    for pred_tuple in Student.PRED_CHOICES:
+        preds[pred_tuple[0]] = pred_tuple[1]
+
+    chart = {
+        'chart': {'type': 'pie'},
+        'title': {'text': 'Student Success Predictor'},
+        'subtitle':{'text':'Pie Chart'},
+        'tooltip': {
+           'pointFormat': '{series.name}: <br>{point.percentage:.1f} %<br>Count: {point.y}'
+         },
+        'series': [{
+            'name': 'Percentage',
+            'data': list(map(lambda row: {'name': preds[row['prediction']], 'y': row['total']}, dataset))
+        }]
+    }
+    return JsonResponse(chart)

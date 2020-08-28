@@ -28,6 +28,15 @@ class Student(models.Model):
         )
         return out_data
 
+    HIGHRISK = 'H'
+    LOWRISK = 'L'
+    MEDIUMRISK = 'M'
+    PRED_CHOICES = (
+        (HIGHRISK, 'High Risk'),
+        (LOWRISK, 'Low Risk'),
+        (MEDIUMRISK, 'Medium Risk'),
+    )
+
     def __str__(self):
         return "{} {} ({})".format(self.first_name, self.last_name, self.student_no)
 
