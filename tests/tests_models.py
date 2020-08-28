@@ -50,7 +50,7 @@ class TestStudentModel(TestCase):
 
     def test_str_(self):
         """Test if string representation of Student model object is correct"""
-        self.assertEqual(str(self.temp_stud), 'John Doe(12345)')
+        self.assertEqual(str(self.temp_stud), 'John Doe (12345)')
 
     def test_full_name(self):
         self.assertEqual(self.temp_stud.full_name(), "John Doe")
