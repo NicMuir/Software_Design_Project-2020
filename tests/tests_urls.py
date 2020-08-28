@@ -40,9 +40,9 @@ class TestStudentPredictorUrls(SimpleTestCase):
         #return True
         # Do Stuff
         
-    def test_Research_url(self):
-        return True
-        # Do Stuff
+    # def test_Research_url(self):
+    #     return True
+    #     # Do Stuff
 
     def test_Research_url(self):
         response = self.client.get(reverse('student_predictor:Research'))
