@@ -18,6 +18,8 @@ install:
   - pip install --upgrade pip
   - pip install -r requirements.txt
   - pip install django-widget-tweaks
+  - pip install django-highcharts
+  - pip install django-chartjs
   - pip install coverage
 before_script:
   - mysql -e 'create database test;' -u root
