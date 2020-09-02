@@ -19,12 +19,14 @@
     <!--------------------------------------------Mid Section/Page Content-------------------------------------->
     <h1 class="text-center text-white text-uppercase">Statistics</h1>
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <div id="container" data-url="{% url 'student_predictor:p' %}"></div>
+    <div id="container" data-url="{% url 'student_predictor:p' %}" style="padding: 30px"></div>
     <link type="text/css" rel="stylesheet" href="TASK3.css" media="all" />
 	  <script language="javascript" type="text/javascript" src="https://code.highcharts.com/highcharts.js"></script>
 	  <script language="javascript" type="text/javascript" src="https://code.highcharts.com/modules/exporting.js">/script>
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <div id="container_2" style="height: 400px; min-width: 310px; max-width: 900px; margin:0 auto"></div>
+    <div id="container_2" style="height: 500px; min-width: 310px; max-width: 900px; margin:0 auto; padding: 30px"></div>
+    <div class="nas">
+    <div id="container_3" style="height: 500px; min-width: 310px; max-width: 900px; margin:0 auto; padding: 30px"></div>
    <!-- the javascript call -->
    <script>
     $.ajax({
@@ -35,6 +37,11 @@
       }
     });
   </script>
+
+  <script>
+      Highcharts.chart('container_3', {{ chart|safe }});
+    </script>
+
   {% include "includes/footer.html" %}
 </body>
 </html>

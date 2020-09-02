@@ -58,14 +58,20 @@
               </div>
             </li>
 
-            <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="{% url 'student_predictor:Research' %}">Research</a>
+            <li class="nav-item px-lg-4 dropdown">
+              <a class="nav-link text-uppercase text-expanded dropdown-toggle" href="{% url 'student_predictor:Research' %}">Research</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                  <p>Click here to to view research related questions</p>
+              </div>
             </li>
 
-              <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="{% url 'student_predictor:Statistics' %}">Statistics</a>
+              <li class="nav-item px-lg-4 dropdown">
+              <a class="nav-link text-uppercase text-expanded dropdown-toggle" href="{% url 'student_predictor:Statistics' %}">Statistics</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                  <p>Click here to to view various charts of the data</p>
+              </div>
             </li>
-            
+
             <li class = "nav-item px-lg-4 dropdown">
               <a class  = "nav-link text-uppercase text-expanded dropdown-toggle" href="/accounts/logout" id="navbarDropdown1" role="button" aria-haspopup="true" aria-expanded="false">Logout</a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown2">

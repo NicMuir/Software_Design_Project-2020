@@ -181,11 +181,62 @@ def chart_data(request):
         'title': {'text': 'Student Success Predictor'},
         'subtitle':{'text':'Pie Chart'},
         'tooltip': {
-           'pointFormat': '{series.name}: <br>{point.percentage:.1f} %<br>Count: {point.y}'
-         },
+      'pointFormat': '{series.name}: <br>{point.percentage:.1f} %<br>Count: {point.y}'
+      },
         'series': [{
             'name': 'Percentage',
             'data': list(map(lambda row: {'name': preds[row['prediction']], 'y': row['total']}, dataset))
         }]
     }
     return JsonResponse(chart)
+
+
+def bar_chart(request):
+    dataset = Student.objects \
+        .values('prediction') \
+        .annotate(high_count=Count('prediction', filter=Q(prediction= 'H')),
+                  low_count=Count('prediction', filter=Q(prediction='L')),
+                  medium_count=Count('prediction', filter=Q(prediction= 'M'))) \
+        .order_by('prediction')
+
+
+    categories = list()
+    high_risk_series_data = list()
+    medium_risk_series_data = list()
+    low_risk_series_data = list()
+
+    for entry in dataset:
+        categories.append('%s prediction' % entry['prediction'])
+        high_risk_series_data.append(entry['high_count'])
+        low_risk_series_data.append(entry['low_count'])
+        medium_risk_series_data.append(entry['medium_count'])
+
+    high_risk_series = {
+        'name': 'High Risk',
+        'data': high_risk_series_data,
+        'color': 'orange'
+    }
+
+    low_risk_series = {
+        'name': 'Low Risk',
+        'data': low_risk_series_data,
+        'color': 'blue'
+    }
+
+    medium_risk_series = {
+        'name': 'Medium Risk',
+        'data': medium_risk_series_data,
+        'color': 'red'
+    }
+
+    chart = {
+        'chart': {'type': 'column'},
+        'title': {'text': 'Student Success Predictor','x':12},
+        'subtitle':{'text':'Bar Chart'},
+        'xAxis': {'categories': ['High Risk','Low Risk','Medium Risk']},
+        'series': [high_risk_series,low_risk_series, medium_risk_series]
+    }
+
+    dump = json.dumps(chart)
+
+    return render(request, 'student_predictor/Statistics.html', {'chart': dump})
