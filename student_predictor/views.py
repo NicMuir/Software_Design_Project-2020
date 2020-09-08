@@ -87,6 +87,35 @@ class PredictStudentView(generic.CreateView):
             ctx['file_upload_form'] = UploadFileForm()
         return ctx
 
+class PredictStudentViewLGR(generic.CreateView):
+    model = Student
+    fields = ['student_no','first_name', 'last_name', 'aggregate_YOS1', 'aggregate_YOS2',
+              'coms_avg_YOS1', 'coms_avg_YOS2', 'maths_avg_YOS1', 'maths_avg_YOS2']
+    template_name = "student_predictor/predict_student_lgr.html"
+
+    # If student model is created successfully run following code to add predicted data
+    def form_valid(self, form):
+        out_response = super().form_valid(form)
+        # Do stuff here
+        data_dict = self.object.predict_data()
+        stud_data = pd.DataFrame.from_dict(data_dict)
+
+        # prediction = self.svc_predictor.predict(df_data)
+
+        self.object.prediction = StudentPredictorConfig.lgr_predictor.predict(stud_data)[0]
+
+        self.object.save()
+        return out_response
+
+    def get_context_data(self, **kwargs):
+        ctx = super(PredictStudentViewLGR, self).get_context_data(**kwargs)
+        # Below copy and pasted, need to read up on this
+        if self.request.POST:
+            ctx['file_upload_form'] = UploadFileForm(self.request.POST)  # Keeps data I think
+        else:
+            ctx['file_upload_form'] = UploadFileForm()
+        return ctx
+
 
 # TODO - TEST (No idea if this will work)
 class PredictMultiStudentView(generic.FormView):

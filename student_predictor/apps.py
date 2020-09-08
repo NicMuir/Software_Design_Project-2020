@@ -9,3 +9,6 @@ class StudentPredictorConfig(AppConfig):
     # Load ML model
     filename = "student_predictor/svc_model.pickle"  # TODO
     svc_predictor = pickle.load(open(filename, 'rb'))
+
+    filenameLGR = "student_predictor/lgr_model.pickle"  # TODO
+    lgr_predictor = pickle.load(open(filenameLGR, 'rb'))

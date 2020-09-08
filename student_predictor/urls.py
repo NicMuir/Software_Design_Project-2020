@@ -16,6 +16,7 @@ urlpatterns = [
     # show_student needs to be removed but first, dependencies need to be fixed
     # path('<int:pk>/', login_required(views.ShowStudentView.as_view()), name='show_student'),
     path('predict', login_required(views.PredictStudentView.as_view()), name='predict_student'),
+    path('predict_lgr', login_required(views.PredictStudentViewLGR.as_view()), name='predict_student_lgr'),
     path('predict/<int:pk>/', login_required(views.RePredictStudentView.as_view()), name='re_predict_student'),
 
     # PredictMultiStudentView
