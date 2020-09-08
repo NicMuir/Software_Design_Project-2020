@@ -8,40 +8,111 @@
     <meta charset="UTF-8">
 
     <title>Statistics</title>
-    <!--Custom Fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+
 </head>
-<body>
-  {% include "includes/header.html" %}
-    <!-------------------------------------------Navigation Section-------------------------------------->
-    {% include "includes/navbar.html" %}
-    <!--------------------------------------------Mid Section/Page Content-------------------------------------->
-    <h1 class="text-center text-white text-uppercase">Statistics</h1>
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <div id="container" data-url="{% url 'student_predictor:p' %}" style="padding: 30px"></div>
-    <link type="text/css" rel="stylesheet" href="TASK3.css" media="all" />
-	  <script language="javascript" type="text/javascript" src="https://code.highcharts.com/highcharts.js"></script>
-	  <script language="javascript" type="text/javascript" src="https://code.highcharts.com/modules/exporting.js">/script>
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <div id="container_2" style="height: 500px; min-width: 310px; max-width: 900px; margin:0 auto; padding: 30px"></div>
-    <div class="nas">
-    <div id="container_3" style="height: 500px; min-width: 310px; max-width: 900px; margin:0 auto; padding: 30px"></div>
-   <!-- the javascript call -->
-   <script>
-    $.ajax({
-      url: $("#container").attr("data-url"),
-      dataType: 'json',
-      success: function (data) {
-        Highcharts.chart("container_2", data);
-      }
-    });
-  </script>
 
-  <script>
-      Highcharts.chart('container_3', {{ chart|safe }});
-    </script>
+   <body>
 
-  {% include "includes/footer.html" %}
-</body>
+     {% include "includes/header.html" %}
+     {% include "includes/navbar.html" %}
+     <h1 class="text-center text-white text-uppercase">Statistics</h1>
+      <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      <script src = "https://code.highcharts.com/highcharts.js"></script>
+      <script src = "https://code.highcharts.com/highcharts-more.js"></script>
+      <script src = "https://code.highcharts.com/modules/heatmap.js"></script>
+      <div id="container" data-url="{% url 'student_predictor:p' %}" style="padding: 30px"></div>
+      <div id="container_2" style="height: 500px; min-width: 310px; max-width: 900px; margin:0 auto; padding: 30px"></div>
+      <div id="container_3" style="height: 500px; min-width: 310px; max-width: 900px; margin:0 auto; padding: 30px"></div>
+      <div id = "container_4" style="height: 500px; min-width: 310px; max-width: 900px; margin:0 auto; padding: 30px"></div>
+
+      <script>
+          $.ajax({
+            url: $("#container").attr("data-url"),
+            dataType: 'json',
+            success: function (data) {
+              Highcharts.chart("container_2", data);
+            }
+          });
+        </script>
+
+        <script>
+            Highcharts.chart('container_3', {{ chart|safe }});
+          </script>
+
+      <script language = "JavaScript">
+         $(document).ready(function() {
+            var chart = {
+               type: 'heatmap',
+               marginTop: 60,
+               marginBottom: 80
+            };
+            var title = {
+               text: 'Confusion Matrix'
+            };
+            var subtitle = {
+               text: 'Heatmap'
+            };
+            var xAxis = {
+              title: {
+              enabled: true,
+              text: 'Predicted'
+                },
+               categories: ['H', 'L','M'],
+            };
+            var yAxis = {
+                  title: {
+                  enabled: true,
+                  text: 'Actual'
+                    },
+               categories: ['M', 'L','H'],
+            };
+            var colorAxis = {
+               min: 0,
+               minColor: '#FFFFFF',
+               maxColor: Highcharts.getOptions().colors[0]
+            };
+            var legend = {
+               align: 'right',
+               layout: 'vertical',
+               margin: 0,
+               verticalAlign: 'top',
+               y: 30,
+               symbolHeight: 315
+            };
+            var tooltip = {
+               formatter: function () {
+                  return '<b>' + this.series.yAxis.categories[this.point.x] +
+                  '</b> Predicted <br><b>' +
+                  this.point.value +
+                  '</b> Actual <br><b>' +
+                  this.series.yAxis.categories[this.point.y];
+               }
+            };
+            var series = [{
+               name: 'Data',
+               borderWidth: 1,
+               data: [[0, 0, 0], [1, 0, 10], [2, 0, 9], [0, 1, 0], [1, 1, 64],
+                  [2, 1, 8], [0, 2, 0], [1, 2, 4], [2, 2, 4]],
+               dataLabels: {
+                  enabled: true,
+                  color: '#000000'
+               }
+            }];
+
+            var json = {};
+            json.chart = chart;
+            json.title = title;
+            json.subtitle = subtitle;
+            json.xAxis = xAxis;
+            json.yAxis = yAxis;
+            json.colorAxis = colorAxis;
+            json.legend = legend;
+            json.series = series;
+
+            $('#container_4').highcharts(json);
+         });
+      </script>
+      {% include "includes/footer.html" %}
+   </body>
+
 </html>
