@@ -47,16 +47,18 @@ class TestStudentPredictorUrls(SimpleTestCase):
     def test_Research_url(self):
         response = self.client.get(reverse('student_predictor:Research'))
         self.assertEqual(response.status_code, 200) #directed to actual page
-        #return True
-        # Do Stuff
+
+
     def test_Statistics_url(self):
         response = self.client.get(reverse('student_predictor:Statistics'))
         self.assertEqual(response.status_code, 200)
-        #return True
-        # Do Stuff
+
 
 class TestDemoUrls(SimpleTestCase):
     def test_home_url(self):
         response = self.client.get(reverse('demo:home'))
         self.assertEqual(response.status_code, 302)
-        # Do Stuff
+
+
+
+
