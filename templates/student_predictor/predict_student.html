@@ -21,12 +21,75 @@
     {% include "includes/header.html" %}
     <!---Navigation Section--->
     {% include "includes/navbar.html" %}
+    <span style="font-size:20px;cursor:pointer;color:white;top: 10px;" onclick="openNav()">&#9776; Choose Model</span>
+    <style>
+  body {
+    font-family: "Lato", sans-serif;
+  }
 
-    <a href="predict_lgr"><button>Logistic Regression Model</button></a>
-    
+  .sidenav {
+    height: 15%;
+    width: 0;
+    z-index: 1;
+    top: 280px;
+    left: 0;
+    background-color: #152238;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 10px;
+  }
+
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+
+  .sidenav .closebtn {
+    position: absolute;
+    top: -15px;
+    right: 0px;
+    font-size: 30px;
+    margin-left: 55px;
+    color: #818181;
+  }
+
+  @media screen and (max-height: 150px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+  </style>
+  </head>
+  <body>
+
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="predict">SVC</a>
+    <a href="predict_lgr">LGR</a>
+  </div>
+
+
+  <script>
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "150px";
+  }
+
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  }
+  </script>
+
 
     <!--<h1 class = "site-heading text-center text-white d-none d-lg-block text-primary mb-3 site-heading-lower">Predict Le Student</h1>-->
     <h1 class="text-center text-white text-uppercase">Predict Student Success</h1>
+    <h2 class="text-center text-white text-uppercase">Support Vector Model</h2>
     <div class="intro-text left-0 text-center bg-faded p-5 rounded margin-predict">
     <form class = "text-white site-heading" method="post" style=" display: inline-block; text-align: right;">{% csrf_token %}
         {{ form.as_p }}
