@@ -45,7 +45,8 @@
                 <tr><td>Year of Study 1 MATH Average:</td><td>{{student.maths_avg_YOS1}}%</td></tr>
                 <tr><td>Year of Study 2 MATH Average:</td><td>{{student.maths_avg_YOS2}}%</td></tr>
             </table>
-            <a class="btn std-button btn-xl text-white" href ="{% url 'student_predictor:re_predict_student' student.id %}"> Edit & Predict </a>
+            <a class="btn std-button btn-xl text-white" href ="{% url 'student_predictor:re_predict_student' student.id %}"> Edit & Predict(SVC) </a>
+            <a class="btn std-button btn-xl text-white" href ="{% url 'student_predictor:re_predict_student_lgr' student.id %}"> Edit & Predict(LGR) </a>
           </div>
     {% endfor %}
     </ul>
@@ -65,12 +66,12 @@
                       "coms_1":"{{student.coms_avg_YOS1}}",
                       "coms_2":"{{student.coms_avg_YOS2}}",
                       "math_1":"{{student.maths_avg_YOS1}}",
-                      "math_2":"{{student.maths_avg_YOS2}}"  
+                      "math_2":"{{student.maths_avg_YOS2}}"
                   },
-                    
+
                     {%endfor%}
                     ]
-    
+
     console.log(students);
 
     var selected_student_no = "{{selected_student_no}}"; // Python None will evaluate to the String 'None'

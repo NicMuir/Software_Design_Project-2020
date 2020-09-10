@@ -183,6 +183,24 @@ class RePredictStudentView(generic.UpdateView):
         self.object.save()
         return out_response
 
+class RePredictStudentViewLGR(generic.UpdateView):
+    model = Student
+    fields = ['student_no', 'first_name', 'last_name', 'aggregate_YOS1', 'aggregate_YOS2',
+              'coms_avg_YOS1', 'coms_avg_YOS2', 'maths_avg_YOS1', 'maths_avg_YOS2']
+    template_name = "student_predictor/re_predict_student.html"
+
+    # If student model is created successfully run following code to add predicted data
+    def form_valid(self, form):
+        out_response = super().form_valid(form)
+        # Do stuff here
+        data_dict = self.object.predict_data()
+        stud_data = pd.DataFrame.from_dict(data_dict)
+
+        self.object.prediction = StudentPredictorConfig.lgr_predictor.predict(stud_data)[0]
+
+        self.object.save()
+        return out_response
+
 def Research(request):
     return render(request,'student_predictor/Research.html')
 
@@ -267,4 +285,3 @@ def bar_chart(request):
     }
 
     return JsonResponse(chart)
-
