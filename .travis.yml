@@ -21,6 +21,7 @@ install:
   - pip install django-highcharts
   - pip install django-chartjs
   - pip install coverage
+  -
 before_script:
   - mysql -e 'create database test;' -u root
 script:
