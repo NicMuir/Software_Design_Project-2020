@@ -1,0 +1,24 @@
+Sprint Planning Meeting with Client - 29th August 2020
+All members present
+
+
+Regarding Research Questions:
+
+
+For Q1
+Compare people taking the course vs the results, some form of normalization
+possibly use bayesian model here
+
+
+Q2
+Question 2: Information Gain Ranking or Principal component analysis
+pg7 diag
+
+Q3 
+which is more useful to student success first or 2nd year
+hypotheses and confusion matrices
+
+
+Regarding Graphing:
+
+Have 2-3 different graph types, allocate each type to a member since each one is a large task on its own
