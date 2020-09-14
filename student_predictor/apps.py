@@ -10,5 +10,5 @@ class StudentPredictorConfig(AppConfig):
     filename = "student_predictor/svc_model.pickle"
     svc_predictor = pickle.load(open(filename, 'rb'))
 
-    #filenameLGR = "student_predictor/lgr_model.pickle"
-    #lgr_predictor = pickle.load(open(filenameLGR, 'rb'))
+    filenameLGR = "student_predictor/lgr_model.pickle"
+    lgr_predictor = pickle.load(open(filenameLGR, 'rb'))
