@@ -1,8 +1,0 @@
-Minutes 
-
-Q3 - In reference to? attrition of marks
-
-Q1 - how to plot, independant dependant variables
-	change struggle to lowest results or similar
-
-Q2 - Maybe change to ranking by entropy,  info gain, principle analysis
