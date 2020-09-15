@@ -1,0 +1,141 @@
+[10:36, 8/28/2020] Nic: So it’s 10:30 and I’m trying to get my license renewed 😂 so I might have to miss the meeting ☹️ but i think he said it would be in the same room as last time
+[10:37, 8/28/2020] Leko: So the agenda was basically show him the updated research questions and then ask him what he wants from us for this Sprint?
+[10:52, 8/28/2020] Nic: 4:00 - 4:30 https://meet.google.com/dnh-xhty-udf
+[15:13, 8/28/2020] Imraan Sultan: Guys....
+[15:17, 8/28/2020] Imraan Sultan: Sorry Owens, I'm not gonna make it either 😔
+[16:00, 8/28/2020] Soni: @Nic Ritso is asking for you
+[16:02, 8/28/2020] Leko: Gonna be slightly late
+[16:41, 8/28/2020] Leko: Tomorrow at 12
+[21:32, 8/28/2020] Imraan Sultan: Awesome!
+[21:32, 8/28/2020] Imraan Sultan: How the meeting go?
+[11:48, 9/1/2020] Nic: Can we have a meeting either tonight or tomorrow for this sprint ?
+[12:08, 9/1/2020] Nasiem: When is the next sprint due?
+[12:14, 9/1/2020] Nic: Next week
+[12:18, 9/1/2020] Nasiem: I can make it tonight
+[14:35, 9/1/2020] Soni: I can do whenever
+[14:45, 9/1/2020] Nasiem: Should I still send you the notes I took?
+[15:01, 9/1/2020] Soni: Please 👏🏼
+[17:57, 9/1/2020] Imraan Sultan: 20:30 ?
+[17:58, 9/1/2020] Nic: Hmm. I’m happy for whenever. We can also do tomorrow befor lunch ? Your choice ?
+[17:58, 9/1/2020] Soni: I'm more down for tomorrow
+[17:58, 9/1/2020] Imraan Sultan: I'm easy
+[10:14, 9/2/2020] Nic: Can we meet at 11:30 ?
+[10:53, 9/2/2020] Imraan Sultan: I have no lights & am in town atm.
+[10:53, 9/2/2020] Imraan Sultan: If you guys do have the meeting, the just fill me in 👌🏻
+[10:56, 9/2/2020] Nic: This afternoon then ?
+[10:57, 9/2/2020] Imraan Sultan: 👌🏻
+[12:40, 9/2/2020] Nasiem: What time?
+[13:05, 9/2/2020] Nic: Let’s do 3 or 4 ?
+[13:06, 9/2/2020] Leko: 4 please
+[13:08, 9/2/2020] Nic: 4 it is
+[13:47, 9/2/2020] Soni: 👌🏼
+[18:32, 9/9/2020] Nasiem: Meeting tomorrow?
+[18:44, 9/9/2020] Nic: Yes
+[18:45, 9/9/2020] Nasiem: What meeting is this 😂
+[18:45, 9/9/2020] Leko: The one where we all come together
+[18:51, 9/9/2020] Soni: Remind me about the time pls, I lost the last few days of message history
+[18:55, 9/9/2020] Imraan Sultan: U mean that time ?
+[19:04, 9/9/2020] Nic: Yes
+[19:04, 9/9/2020] Nic: Is that not the time you water ?🤔
+[19:04, 9/9/2020] Nic: Wanted *
+[19:10, 9/9/2020] Soni: Tyty
+[19:24, 9/9/2020] Imraan Sultan: 👌🏻
+[11:53, 9/10/2020] Nic: For today : https://meet.google.com/gfo-vutc-bab
+[11:57, 9/10/2020] Nic: @Nasiem we need to fix some code, our build is failing
+[12:00, 9/10/2020] Nasiem: The build?
+Can you you run it?
+[12:03, 9/10/2020] Nic: It starts to fail when we implement  the charts
+[12:04, 9/10/2020] Nasiem: We can take a look at it on dc
+[12:04, 9/10/2020] Nic: On my way
+[12:07, 9/10/2020] Nic: Just making coffee
+[12:14, 9/10/2020] Nic: Cool I’m on
+[12:15, 9/10/2020] Nasiem: Microphone giving me problems, just give me a minute or so
+[12:15, 9/10/2020] Nic: 🤙🏼
+[12:19, 9/10/2020] Nic: Check on discord setting. It might have changed and your mic would be working but it’s not set on dc
+[13:35, 9/10/2020] Leko: Who's got the update/correct research questions?
+[13:36, 9/10/2020] Nic: I’m sending messages if you can see them
+[13:38, 9/10/2020] Leko: Ah yes
+[13:38, 9/10/2020] Leko: Can't see his screen by the way, but it's a me issue, may be one of my numerous chrome extensions
+[13:39, 9/10/2020] Soni: Nice and familiar
+[13:41, 9/10/2020] Imraan Sultan: Sorry guys, my lights are gone again 🙈
+[13:41, 9/10/2020] Imraan Sultan: FML
+[13:58, 9/10/2020] Leko: Masters level. Sure. Why not.
+[13:59, 9/10/2020] Leko: Full stop instead of question mark because I'm not even going to entertain the chance of doing this😂
+[14:13, 9/10/2020] Nic: @Imraan Sultan for the Logistic regression model. Does it predict ?
+[14:56, 9/10/2020] Imraan Sultan: When my lights come back, I'll make a pull and check 👌🏻
+[15:07, 9/10/2020] Nasiem: Guys my network giving problems
+[15:07, 9/10/2020] Nasiem: It's fine, it does predict
+[13:52, 9/13/2020] Nic: Lads, let’s make sure everything is Gucci and finnished for tomorrow ? Maby have a meeting tomorrow to prep for the review ?
+[13:52, 9/13/2020] Soni: I'll finish the Taiga stuff by tonight
+[13:52, 9/13/2020] Soni: Happy for a meeting tomorrow
+[14:14, 9/13/2020] Nasiem: What else do we need to get done?
+[17:51, 9/13/2020] Soni: Also if anyone took notes etc please send them to me
+[10:45, 9/14/2020] Nic: Meeting at 3:30 ?
+[10:52, 9/14/2020] Soni: 👌🏼
+[11:21, 9/14/2020] Soni: Also please let me know everything that was done so I can make  tasks
+
+
+Anthony NK08/24/2020
+Make a change to diagram and push
+
+Anthony NK08/24/2020
+Gonna bounce for dinner
+August 25, 2020
+
+Anthony NK08/25/2020
+Sprint tutor meeting
+publish a release every sprint
+comment bugs in the issues section
+'formalize language'????
+September 2, 2020
+
+Soni09/02/2020
+Sprint goals
+[3:55 PM]
+Update all diagrams
+[3:56 PM]
+Sprint release
+
+WormBear209/02/2020
+[[ 0  3  5]
+ [ 1 59 12]
+ [ 2  9  8]]
+[4:01 PM]
+Confusion matrix for SVC Model
+[4:02 PM]
+Clasification support
+[4:02 PM]
+precision    recall  f1-score   support
+
+           H       0.00      0.00      0.00         8
+           L       0.83      0.82      0.83        72
+           M       0.32      0.42      0.36        19
+
+    accuracy                           0.68        99
+   macro avg       0.38      0.41      0.40        99
+weighted avg       0.67      0.68      0.67        99
+[4:03 PM]
+[[ 0  3  5]
+ [ 0 63  9]
+ [ 0  8 11]]
+[4:03 PM]
+precision    recall  f1-score   support
+
+           H       0.00      0.00      0.00         8
+           L       0.85      0.88      0.86        72
+           M       0.44      0.58      0.50        19
+
+    accuracy                           0.75        99
+   macro avg       0.43      0.48      0.45        99
+weighted avg       0.70      0.75      0.72        99
+
+Anthony NK09/02/2020
+Sorry I missed, got pulled into a long convo, we should probably add comments about bugs to the issues section as well (or make them up)
+September 8, 2020
+
+Soni09/08/2020
+pie/bar/averages etc/research questions/machine learning model thing(edited)
+September 10, 2020
+
+Anthony NK09/10/2020
+the break_ties error

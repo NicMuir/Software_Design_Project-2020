@@ -21,8 +21,10 @@
     {% include "includes/header.html" %}
     <!---Navigation Section--->
     {% include "includes/navbar.html" %}
+
     <!--<h1 class = "site-heading text-center text-white d-none d-lg-block text-primary mb-3 site-heading-lower">Predict Le Student</h1>-->
     <h1 class="text-center text-white text-uppercase">Predict Student Success</h1>
+    <h2 class="text-center text-white text-uppercase">Logistic Regression Model</h2>
     <div class="intro-text left-0 text-center bg-faded p-5 rounded margin-predict">
     <form class = "text-white site-heading" method="post" style=" display: inline-block; text-align: right;">{% csrf_token %}
         {{ form.as_p }}
