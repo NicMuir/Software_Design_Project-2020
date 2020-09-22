@@ -163,6 +163,50 @@ class PredictMultiStudentView(generic.FormView):
         else:
             return render(request, self.template_name, {'form': form})
 
+# TODO - TEST (No idea if this will work)
+class PredictMultiStudentViewLGR(generic.FormView):
+    template_name = 'student_predictor/predict_multi_student_lgr.html'
+    success_url = reverse_lazy('student_predictor:show_all_students')
+    form_class = UploadFileForm
+
+    @staticmethod
+    def handle_file(file):
+        # # seek ensures pointer is at start of file (this may not be the case due to other processes using this file)
+        # file.seek(0)
+
+        df = pd.read_lgr(file)
+
+        # create and predict student via data given in row of dataframe
+        def predict_and_save(row):
+            row_dict = row.to_dict()
+
+            # row_dict should be of right format as this should be validated in form
+            # if student with given student number exists simply update the values rather than create new instance
+            temp_student, created = Student.objects.update_or_create(student_no=row_dict['student_no'], defaults=row_dict)
+
+            data_dict = temp_student.predict_data()
+            stud_data = pd.DataFrame.from_dict(data_dict)
+
+            temp_student.prediction = StudentPredictorConfig.lgr_predictor.predict(stud_data)[0]
+            temp_student.save()
+
+        for i in range(0, df.shape[0]):
+            row = df.iloc[i]
+            predict_and_save(row)
+
+    def get(self, request, *args, **kwargs):
+        form = self.form_class()
+        return render(request, self.template_name, {'form': form})
+
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST, request.FILES)
+        if form.is_valid():
+            # form.save()
+            self.handle_file(file=request.FILES['file'])  # error handling will be done in form validator
+            return redirect(self.success_url)
+        else:
+            return render(request, self.template_name, {'form': form})
+
 
 # @login_required
 class RePredictStudentView(generic.UpdateView):
