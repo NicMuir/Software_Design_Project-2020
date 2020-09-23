@@ -9,6 +9,7 @@ from django.contrib.auth import get_user_model
 from django.test import Client
 import pandas as pd
 from student_predictor.models import Student
+from django.db.models import Count
 
 
 class TestViews(TestCase):
@@ -96,4 +97,19 @@ class TestViews(TestCase):
         url = reverse('demo:home')
         self.assertEquals(resolve(url).func, home)
 
+    def test_chart_data_view(self):
+        testoutput = {'H': 'High Risk', 'L': 'Low Risk', 'M': 'Medium Risk'}
 
+        dataset = Student.objects \
+            .values('prediction') \
+            .exclude(prediction='') \
+            .annotate(total=Count('prediction')) \
+            .order_by('prediction')
+        preds = dict()
+        for pred_tuple in Student.PRED_CHOICES:
+            preds[pred_tuple[0]] = pred_tuple[1]
+
+        if preds == testoutput:
+            return True
+        else:
+            return False

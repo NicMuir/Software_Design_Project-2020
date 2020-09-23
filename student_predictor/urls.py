@@ -23,8 +23,10 @@ urlpatterns = [
     # PredictMultiStudentView
 
     path('multipredict/', login_required(views.PredictMultiStudentView.as_view()), name='predict_multi_student'),
+    path('multipredict/multipredict_lgr/', login_required(views.PredictMultiStudentViewLGR.as_view()), name='predict_multi_student_lgr'),
     path('Research' , views.Research , name = 'Research'),
     path('Statistics' , views.Statistics , name = 'Statistics'),
     path('p_chart', views.chart_data, name='p'),
-    path('b_chart', views.bar_chart, name='b')
+    path('b_chart', views.bar_chart, name='b'),
+    path('b_chart2', views.bar_chart2, name='b2')
 ]

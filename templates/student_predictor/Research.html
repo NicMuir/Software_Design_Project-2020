@@ -17,9 +17,9 @@
     <!-------------------------------------------Navigation Section-------------------------------------->
     {% include "includes/navbar.html" %}
     <!--------------------------------------------Mid Section/Page Content-------------------------------------->
-    <div style = "color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
-    <h3 class = "text-center">Research</h3>
-        <p>As a tool, the <b>Student Predictor</b>, enables students and educators
+    <div style = "color:black;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
+    <h3 class = "text-center" style="font-size: 3em;">Research</h3>
+        <p style = "font-size: 2em;">As a tool, the <b>Student Predictor</b>, enables students and educators
             to identify the current trajectory of their academic performance.
 
             <br>
@@ -27,14 +27,39 @@
             The following section explores a further set of possible questions that the <b>Student Predictor</b>
             can be used to answer.
         </p>
-        <ol>
+        <ol style = "font-size: 1.5em;">
             <li>Which subjects do students struggle most with?
+                <ul>
+                    For the first research question we will be exploring our results by taking a number of factors into account.
+                    Firstly we need to normalize the data, since we have to factor the amount of people taking the course against the results of people who
+                    have already completed it.
+
+                    We can further expand on how to explore the data here by implementing a form of Bayesian Analysis. In particular, using the formula:
+                    P(A|B) = (P(B|A)P(A))/P(B),
+ 
+                    which gives us the probability of a student passing given a condition. For example, "What is the probability a student will pass
+                    given their MATHS 2 marks are average or high?" This will help us assess which subjects students will struggle with the most.
+                </ul>
             </li>
+            <br>
             <li>
                 Which features contribute the least to a student's success?
+                <ul>
+                    To determine which features a student will struggle with the most, we intend to apply either Information Gain Ranking or Principal
+                    Component Analysis.
+
+                    We also intend to use this diagram provided by our client/lecturer to guide our process.
+                    <div class = "container"><img style="max-width: 90%; height: auto;" src = "/static/img/researchimage.png"></div>
+                </ul>
             </li>
+            <br>
             <li>
-                What is the correlation between first and second year marks?
+                Which is more useful to student success, first or second year?
+                <ul>
+                    We intend to solve this by first proposing a hypothesis, either saying first year is more useful or second year is more useful.
+                    By means of confusion matrices we will then explore if our initial hypothesis was correct or not and in doing so derive a 
+                    solution to the question of which year is more important.
+                </ul>
             </li>
         </ol>
     </div>

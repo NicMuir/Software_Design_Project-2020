@@ -12,8 +12,7 @@
 
 .dropdown-menu {
   margin-top: 0;
-  border-radius: 25px !important;
-  background: linear-gradient(45deg, #2F1C53,#A46DFF) !important;
+  background: #2F1C53 !important;
   color: #FFFFFF !important;
   text-align: center !important;
 }

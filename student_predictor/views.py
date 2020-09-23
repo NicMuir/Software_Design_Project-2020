@@ -16,6 +16,8 @@ from .apps import StudentPredictorConfig
 import pandas as pd
 from django.core import serializers
 
+from django.db.models import Avg
+
 from highcharts.views import (HighChartsMultiAxesView, HighChartsPieView,
                               HighChartsSpeedometerView, HighChartsHeatMapView, HighChartsPolarView)
 
@@ -163,6 +165,49 @@ class PredictMultiStudentView(generic.FormView):
         else:
             return render(request, self.template_name, {'form': form})
 
+class PredictMultiStudentViewLGR(generic.FormView):
+    template_name = 'student_predictor/predict_multi_student_lgr.html'
+    success_url = reverse_lazy('student_predictor:show_all_students')
+    form_class = UploadFileForm
+
+    @staticmethod
+    def handle_file(file):
+        # # seek ensures pointer is at start of file (this may not be the case due to other processes using this file)
+        # file.seek(0)
+
+        df = pd.read_csv(file)
+
+        # create and predict student via data given in row of dataframe
+        def predict_and_save(row):
+            row_dict = row.to_dict()
+
+            # row_dict should be of right format as this should be validated in form
+            # if student with given student number exists simply update the values rather than create new instance
+            temp_student, created = Student.objects.update_or_create(student_no=row_dict['student_no'], defaults=row_dict)
+
+            data_dict = temp_student.predict_data()
+            stud_data = pd.DataFrame.from_dict(data_dict)
+
+            temp_student.prediction = StudentPredictorConfig.lgr_predictor.predict(stud_data)[0]
+            temp_student.save()
+
+        for i in range(0, df.shape[0]):
+            row = df.iloc[i]
+            predict_and_save(row)
+
+    def get(self, request, *args, **kwargs):
+        form = self.form_class()
+        return render(request, self.template_name, {'form': form})
+
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST, request.FILES)
+        if form.is_valid():
+            # form.save()
+            self.handle_file(file=request.FILES['file'])  # error handling will be done in form validator
+            return redirect(self.success_url)
+        else:
+            return render(request, self.template_name, {'form': form})
+
 
 # @login_required
 class RePredictStudentView(generic.UpdateView):
@@ -239,49 +284,91 @@ def chart_data(request):
 
 
 def bar_chart(request):
-    dataset = Student.objects \
-        .values('prediction') \
-        .annotate(high_count=Count('prediction', filter=Q(prediction= 'H')),
-                  low_count=Count('prediction', filter=Q(prediction='L')),
-                  medium_count=Count('prediction', filter=Q(prediction= 'M'))) \
-        .order_by('prediction')
-
 
     categories = list()
-    high_risk_series_data = list()
-    medium_risk_series_data = list()
-    low_risk_series_data = list()
+    coms1_avg_data = list()
+    math1_avg_data = list()
+    yos1_avg_data = list()
+    coms1_avg = Student.objects.all().aggregate(Avg('coms_avg_YOS1'))
+    math1_avg = Student.objects.all().aggregate(Avg('maths_avg_YOS1'))
+    yos1_avg = Student.objects.all().aggregate(Avg('aggregate_YOS1'))
+    #print(avgs)
 
-    for entry in dataset:
-        categories.append('%s prediction' % entry['prediction'])
-        high_risk_series_data.append(entry['high_count'])
-        low_risk_series_data.append(entry['low_count'])
-        medium_risk_series_data.append(entry['medium_count'])
 
-    high_risk_series = {
-        'name': 'High Risk',
-        'data': high_risk_series_data,
-        'color': 'orange'
-    }
+    coms1_avg_data.append(coms1_avg.get('coms_avg_YOS1__avg'))
+    math1_avg_data.append(math1_avg.get('maths_avg_YOS1__avg'))
+    yos1_avg_data.append(yos1_avg.get('aggregate_YOS1__avg'))
 
-    low_risk_series = {
-        'name': 'Low Risk',
-        'data': low_risk_series_data,
+    coms1_avg_series = {
+        'name': 'Coms1 Avg',
+        'data': coms1_avg_data,
         'color': 'blue'
     }
 
-    medium_risk_series = {
-        'name': 'Medium Risk',
-        'data': medium_risk_series_data,
+
+    math1_avg_series = {
+        'name': 'Maths1 Avg',
+        'data': math1_avg_data,
+        'color': 'green'
+    }
+
+    yos1_avg_series = {
+        'name': 'YOS1 Avg',
+        'data': yos1_avg_data,
         'color': 'red'
     }
 
     chart = {
         'chart': {'type': 'column'},
         'title': {'text': 'Student Success Predictor','x':12},
-        'subtitle':{'text':'Bar Chart'},
-        'xAxis': {'categories': ['High Risk','Low Risk','Medium Risk']},
-        'series': [high_risk_series,low_risk_series, medium_risk_series]
+        'subtitle':{'text':'First Year Results'},
+    #    'xAxis': {'categories': ['Coms1 Avg','Math1 Avg','YOS1 Avg']},
+        'series': [coms1_avg_series,math1_avg_series, yos1_avg_series]
+    }
+
+    return JsonResponse(chart)
+
+def bar_chart2(request):
+
+    categories = list()
+    coms2_avg_data = list()
+    math2_avg_data = list()
+    yos2_avg_data = list()
+    coms2_avg = Student.objects.all().aggregate(Avg('coms_avg_YOS2'))
+    math2_avg = Student.objects.all().aggregate(Avg('maths_avg_YOS2'))
+    yos2_avg = Student.objects.all().aggregate(Avg('aggregate_YOS2'))
+    #print(avgs)
+
+
+    coms2_avg_data.append(coms2_avg.get('coms_avg_YOS2__avg'))
+    math2_avg_data.append(math2_avg.get('maths_avg_YOS2__avg'))
+    yos2_avg_data.append(yos2_avg.get('aggregate_YOS2__avg'))
+
+    coms2_avg_series = {
+        'name': 'Coms2 Avg',
+        'data': coms2_avg_data,
+        'color': 'blue'
+    }
+
+
+    math2_avg_series = {
+        'name': 'Maths2 Avg',
+        'data': math2_avg_data,
+        'color': 'green'
+    }
+
+    yos2_avg_series = {
+        'name': 'YOS2 Avg',
+        'data': yos2_avg_data,
+        'color': 'red'
+    }
+
+    chart = {
+        'chart': {'type': 'column'},
+        'title': {'text': 'Student Success Predictor','x':12},
+        'subtitle':{'text':'Second Year Results'},
+        #'xAxis': {'categories': ['Math2 Avg','Coms2 Avg','YOS2 Avg']},
+        'series': [coms2_avg_series,math2_avg_series, yos2_avg_series]
     }
 
     return JsonResponse(chart)

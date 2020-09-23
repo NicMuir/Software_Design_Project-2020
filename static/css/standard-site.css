@@ -131,6 +131,11 @@ p {
   clear: both;
 }
 
+.research-text{
+  font-size: 400px;
+  color: white;
+}
+
 /*media queries (mobile responsiveness)*/
 @media (min-width: 992px) {
   .intro .intro-img {
