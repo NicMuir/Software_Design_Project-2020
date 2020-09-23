@@ -257,7 +257,7 @@ def Test(request):
 
 
 
-def chart_data(request):
+def chart_data():
     dataset = Student.objects \
         .values('prediction') \
         .exclude(prediction='') \

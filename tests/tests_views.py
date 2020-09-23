@@ -3,13 +3,14 @@ from django.contrib.auth.models import AnonymousUser
 from django.test import TestCase
 from student_predictor.models import Student
 from demo.views import home
-from student_predictor.views import ShowAllStudentsView , PredictStudentView , PredictMultiStudentView , RePredictStudentView
+from student_predictor.views import *
 from django.urls import reverse, resolve
 from django.contrib.auth import get_user_model
 from django.test import Client
 import pandas as pd
 from student_predictor.models import Student
 from django.db.models import Count
+import json
 
 
 class TestViews(TestCase):
@@ -98,8 +99,6 @@ class TestViews(TestCase):
         self.assertEquals(resolve(url).func, home)
 
     def test_chart_data_view(self):
-        testoutput = {'H': 'High Risk', 'L': 'Low Risk', 'M': 'Medium Risk'}
-
         dataset = Student.objects \
             .values('prediction') \
             .exclude(prediction='') \
@@ -109,7 +108,24 @@ class TestViews(TestCase):
         for pred_tuple in Student.PRED_CHOICES:
             preds[pred_tuple[0]] = pred_tuple[1]
 
-        if preds == testoutput:
+        testchart = {
+            'chart': {'type': 'pie'},
+            'title': {'text': 'Student Success Predictor'},
+            'subtitle': {'text': 'Pie Chart'},
+            'tooltip': {
+                'pointFormat': '{series.name}: <br>{point.percentage:.1f} %<br>Count: {point.y}'
+            },
+            'series': [{
+                'name': 'Percentage',
+                'data': list(map(lambda row: {'name': preds[row['prediction']], 'y': row['total']}, dataset))
+            }]
+        }
+
+        temp = JsonResponse(testchart)
+        output = chart_data()
+
+        if temp == output:
             return True
         else:
             return False
+
