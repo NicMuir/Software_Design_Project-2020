@@ -283,7 +283,7 @@ def chart_data():
     return JsonResponse(chart)
 
 
-def bar_chart(request):
+def bar_chart():
 
     categories = list()
     coms1_avg_data = list()
@@ -328,7 +328,7 @@ def bar_chart(request):
 
     return JsonResponse(chart)
 
-def bar_chart2(request):
+def bar_chart2():
 
     categories = list()
     coms2_avg_data = list()

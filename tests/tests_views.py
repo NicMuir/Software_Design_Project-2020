@@ -129,3 +129,102 @@ class TestViews(TestCase):
         else:
             return False
 
+    def test_bar_chart_view(self):
+        categories = list()
+        coms1_avg_data = list()
+        math1_avg_data = list()
+        yos1_avg_data = list()
+        coms1_avg = Student.objects.all().aggregate(Avg('coms_avg_YOS1'))
+        math1_avg = Student.objects.all().aggregate(Avg('maths_avg_YOS1'))
+        yos1_avg = Student.objects.all().aggregate(Avg('aggregate_YOS1'))
+        # print(avgs)
+
+        coms1_avg_data.append(coms1_avg.get('coms_avg_YOS1__avg'))
+        math1_avg_data.append(math1_avg.get('maths_avg_YOS1__avg'))
+        yos1_avg_data.append(yos1_avg.get('aggregate_YOS1__avg'))
+
+        coms1_avg_series = {
+            'name': 'Coms1 Avg',
+            'data': coms1_avg_data,
+            'color': 'blue'
+        }
+
+        math1_avg_series = {
+            'name': 'Maths1 Avg',
+            'data': math1_avg_data,
+            'color': 'green'
+        }
+
+        yos1_avg_series = {
+            'name': 'YOS1 Avg',
+            'data': yos1_avg_data,
+            'color': 'red'
+        }
+
+        chart = {
+            'chart': {'type': 'column'},
+            'title': {'text': 'Student Success Predictor', 'x': 12},
+            'subtitle': {'text': 'First Year Results'},
+            #    'xAxis': {'categories': ['Coms1 Avg','Math1 Avg','YOS1 Avg']},
+            'series': [coms1_avg_series, math1_avg_series, yos1_avg_series]
+        }
+        temp = JsonResponse(chart)
+        output = bar_chart()
+
+        if temp == output:
+            return True
+        else:
+            return False
+
+
+
+
+    def test_bar_chart2_view(self):
+
+        categories = list()
+        coms2_avg_data = list()
+        math2_avg_data = list()
+        yos2_avg_data = list()
+        coms2_avg = Student.objects.all().aggregate(Avg('coms_avg_YOS2'))
+        math2_avg = Student.objects.all().aggregate(Avg('maths_avg_YOS2'))
+        yos2_avg = Student.objects.all().aggregate(Avg('aggregate_YOS2'))
+        # print(avgs)
+
+        coms2_avg_data.append(coms2_avg.get('coms_avg_YOS2__avg'))
+        math2_avg_data.append(math2_avg.get('maths_avg_YOS2__avg'))
+        yos2_avg_data.append(yos2_avg.get('aggregate_YOS2__avg'))
+
+        coms2_avg_series = {
+            'name': 'Coms2 Avg',
+            'data': coms2_avg_data,
+            'color': 'blue'
+        }
+
+        math2_avg_series = {
+            'name': 'Maths2 Avg',
+            'data': math2_avg_data,
+            'color': 'green'
+        }
+
+        yos2_avg_series = {
+            'name': 'YOS2 Avg',
+            'data': yos2_avg_data,
+            'color': 'red'
+        }
+
+        chart = {
+            'chart': {'type': 'column'},
+            'title': {'text': 'Student Success Predictor', 'x': 12},
+            'subtitle': {'text': 'Second Year Results'},
+            # 'xAxis': {'categories': ['Math2 Avg','Coms2 Avg','YOS2 Avg']},
+            'series': [coms2_avg_series, math2_avg_series, yos2_avg_series]
+        }
+
+        temp= JsonResponse(chart)
+        output = bar_chart2()
+        if temp == output:
+            return True
+        else:
+            return False
+
+
