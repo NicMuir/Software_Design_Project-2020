@@ -257,7 +257,7 @@ def Test(request):
 
 
 
-def chart_data():
+def chart_data(request):
     dataset = Student.objects \
         .values('prediction') \
         .exclude(prediction='') \
@@ -283,7 +283,7 @@ def chart_data():
     return JsonResponse(chart)
 
 
-def bar_chart():
+def bar_chart(request):
 
     categories = list()
     coms1_avg_data = list()
@@ -328,7 +328,7 @@ def bar_chart():
 
     return JsonResponse(chart)
 
-def bar_chart2():
+def bar_chart2(request):
 
     categories = list()
     coms2_avg_data = list()
