@@ -34,6 +34,7 @@ p {
   background-color: rgba(255, 255, 255, 0.85);
 }
 
+
 .std-button {
   background-color: #b030b0;
   border-color: #e6a756;
@@ -137,11 +138,29 @@ p {
 }
 
 /*media queries (mobile responsiveness)*/
-@media (min-width: 992px) {
+@media screen and (max-width: 400px) {
   .intro .intro-img {
     width: 75%;
     float: right;
   }
+
+  .login-parent{
+    position:relative;
+  }
+
+  .redder{
+    color: black;
+  }
+
+  .login-child{
+    display: absolute;
+    top: 50%;
+  }
+
+  .span.border{
+    visibility: hidden;
+  }
+
   .intro .intro-text {
     left: 0;
     width: 60%;
