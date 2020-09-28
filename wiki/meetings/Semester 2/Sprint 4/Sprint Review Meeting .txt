@@ -1,0 +1,10 @@
+Sprint Review Meeting Sprint 3
+All members present 
+
+Documentation much better
+
+User stories need to be bigger perhaps
+Break up big stories into subtasks
+Work on acceptance criteria
+
+Everything else looks good
