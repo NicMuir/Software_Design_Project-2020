@@ -122,7 +122,7 @@ class TestViews(TestCase):
         }
 
         temp = JsonResponse(testchart)
-        output = chart_data()
+        output = chart_data(self)
 
         if temp == output:
             return True
@@ -169,7 +169,7 @@ class TestViews(TestCase):
             'series': [coms1_avg_series, math1_avg_series, yos1_avg_series]
         }
         temp = JsonResponse(chart)
-        output = bar_chart()
+        output = bar_chart(self)
 
         if temp == output:
             return True
@@ -221,7 +221,7 @@ class TestViews(TestCase):
         }
 
         temp= JsonResponse(chart)
-        output = bar_chart2()
+        output = bar_chart2(self)
         if temp == output:
             return True
         else:

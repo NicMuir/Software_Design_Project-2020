@@ -121,7 +121,6 @@ class PredictStudentViewLGR(generic.CreateView):
         return ctx
 
 
-# TODO - TEST (No idea if this will work)
 class PredictMultiStudentView(generic.FormView):
     template_name = 'student_predictor/predict_multi_student.html'
     success_url = reverse_lazy('student_predictor:show_all_students')
@@ -257,7 +256,7 @@ def Test(request):
 
 
 
-def chart_data():
+def chart_data(request):
     dataset = Student.objects \
         .values('prediction') \
         .exclude(prediction='') \
@@ -283,7 +282,7 @@ def chart_data():
     return JsonResponse(chart)
 
 
-def bar_chart():
+def bar_chart(request):
 
     categories = list()
     coms1_avg_data = list()
@@ -328,7 +327,7 @@ def bar_chart():
 
     return JsonResponse(chart)
 
-def bar_chart2():
+def bar_chart2(request):
 
     categories = list()
     coms2_avg_data = list()
