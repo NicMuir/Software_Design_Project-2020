@@ -1,0 +1,19 @@
+Sprint Planning Meeting with Client - 17th September 2020
+All members present
+
+
+Regarding Research Questions:
+
+Q3 
+confusion matrices
+
+
+Bar-graph to display first year and second year differences
+
+Mobile Responsiveness 
+
+Logistic regression model back button
+
+Predict multi student Lin regression
+
+Further research Qs

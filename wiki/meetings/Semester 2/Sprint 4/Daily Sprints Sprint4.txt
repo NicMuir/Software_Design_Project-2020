@@ -1,0 +1,121 @@
+[11:44, 9/17/2020] Leko: This is all this semester I mean
+[11:46, 9/17/2020] Nic: I think so
+[11:47, 9/17/2020] Leko: We did better than 5 idiots plus one genius, so at minimum 2 of us aren't idiots lol
+[11:55, 9/17/2020] Leko: So hopefully we don't write ML, SD or CGV exams now. Nice
+[11:56, 9/17/2020] Leko: Since those marks are on our transcripts now
+[12:07, 9/17/2020] Soni: Yeah, they have been for awhile now tho
+[12:09, 9/17/2020] Leko: Oh, I did not know this
+[12:38, 9/17/2020] Leko: Just like semester 1 yeah
+[12:42, 9/17/2020] Soni: From what it seems I think Rylan is the best marker
+[12:42, 9/17/2020] Soni: All the other tutors seem to have a mix
+[12:42, 9/17/2020] Nic: Yup
+[09:30, 9/21/2020] Nic: Meeting today ? I’m away from Thursday to Sunday so we gota get stuff going that I can do befor I leave
+[10:54, 9/21/2020] Imraan Sultan: 👌🏻 item?
+[10:54, 9/21/2020] Imraan Sultan: #Time?
+[11:38, 9/21/2020] Nic: Maby 4/5?
+[11:40, 9/21/2020] Soni: Good for me
+[11:53, 9/21/2020] Imraan Sultan: 👌🏼
+[11:53, 9/21/2020] Imraan Sultan: Tell me something...What does LGR stand for?
+[12:01, 9/21/2020] Nasiem: Logistic regression
+[12:15, 9/21/2020] Imraan Sultan: So isn't it suppose to be LRG 💁🏻‍♂️😂
+[12:19, 9/21/2020] Nasiem: You can change it if you want to 😂
+[12:20, 9/21/2020] Imraan Sultan: Lol I was just asking cause it didn't add up 😂
+[16:08, 9/21/2020] Imraan Sultan: We on now ?
+[16:21, 9/21/2020] Nic: Oh shit
+[16:22, 9/21/2020] Nic: I’m so sorry 😂 I had to get my wheels done on my car which has taken hours 🙄
+[16:22, 9/21/2020] Imraan Sultan: No I was just asking...
+[16:22, 9/21/2020] Imraan Sultan: I'm not  on iether
+[16:23, 9/21/2020] Nic: Check if the others are on please. Maby you can get the meeting going while I’m on my way home
+[16:23, 9/21/2020] Soni: I'm around whenever
+[16:23, 9/21/2020] Leko: Let's just say 5 then
+[16:24, 9/21/2020] Nic: 🤙🏼
+[16:24, 9/21/2020] Imraan Sultan: 👌🏻 I'm easy
+[16:53, 9/21/2020] Nic: Ok I’m on
+[16:54, 9/21/2020] Nic: Just so y’all know, getting your rims fixed and your car rebalanced took me 3 fucking hours 😒
+[09:21, 9/22/2020] Imraan Sultan: Logistic regression model back button is complete 
+
+Busy with Predict multi student Lin regression now, not sure of I'll be able to figure this one out, but gonna give it a try 👍🏼
+[09:54, 9/22/2020] Imraan Sultan: Is it "Logistic" regression or "Linear" regression ?😂
+[10:36, 9/22/2020] Nic: Logistic I think 😂
+[11:40, 9/22/2020] Leko: This will have to be deleted 😂
+[11:40, 9/22/2020] Soni: 😡
+[12:57, 9/22/2020] Imraan Sultan: Where do I find the " pd.read_csv(file) "
+[13:17, 9/22/2020] Nasiem: What are you busy with?
+[13:19, 9/22/2020] Imraan Sultan: I'm adding another function in views.py
+[13:19, 9/22/2020] Imraan Sultan: For the PredictMultiStudentLGR Page
+[13:20, 9/22/2020] Imraan Sultan: So I'm not sure if I need to change read_csv to something different.
+[13:20, 9/22/2020] Nasiem: We don't
+[13:20, 9/22/2020] Imraan Sultan: Oh ok 😂
+[13:21, 9/22/2020] Imraan Sultan: So the LGR model will take a csv file aswell
+[13:21, 9/22/2020] Imraan Sultan: ?
+[13:22, 9/22/2020] Nasiem: Chat on dc?
+[13:22, 9/22/2020] Imraan Sultan: 👌🏻
+[15:04, 9/22/2020] Nasiem: For one of our user stories, the bar graph one 
+I think we should change it for answering the 3rd research question
+[11:33, 9/23/2020] Nic: Ok so our coverage has dropped hectically so ima start working on tests for the stuff we have implemented
+[11:34, 9/23/2020] Imraan Sultan: Do u know what to test?
+[11:36, 9/23/2020] Nic: Things in the views.py that aren’t covered 😂
+[11:36, 9/23/2020] Imraan Sultan: 👌🏼😂
+[11:37, 9/23/2020] Imraan Sultan: I added the multistudentLGR page if that's any benefit to you 💁🏻‍♂️
+[11:57, 9/23/2020] Nic: @Nasiem @Imraan Sultan  what does this bit of code do ? Just get the possible predictions ?
+[11:58, 9/23/2020] Imraan Sultan: ...@Nasiem  ? 🤷🏻‍♂️😂
+[12:03, 9/23/2020] Nasiem: Who coded this?
+[12:03, 9/23/2020] Nasiem: Yes I think our coverage dropped only because of the charts
+[12:04, 9/23/2020] Nic: Don’t stress i cheap skated my way through a test for this 😂😂😂😂
+[12:05, 9/23/2020] Nic: It was under the chart shit but I sorted it out 😎
+[12:06, 9/23/2020] Imraan Sultan: 👌🏻
+[12:14, 9/23/2020] Nasiem: So it increased our coverage? 👀
+[12:15, 9/23/2020] Nic: Don’t you even worry about it 💁🏻‍♂️
+[12:15, 9/23/2020] Nic: 😂
+[12:16, 9/23/2020] Nasiem: Sure 😂😂
+[12:23, 9/23/2020] Nic: Tests for the charts have been completed good sirs 😈
+[12:25, 9/23/2020] Nic: From 79% to 88% 😎
+[12:29, 9/23/2020] Imraan Sultan: Sweet 👊🏼😎
+[12:30, 9/23/2020] Nasiem: At least, it went up by a lot 😳
+[16:30, 9/23/2020] Imraan Sultan: Percentage went up, programme went down 😕
+[18:17, 9/24/2020] Imraan Sultan: https://www.bbc.com/news/newsbeat-54277123
+[18:44, 9/24/2020] Leko: Can't wait to be the impostor once tests are done
+[18:44, 9/24/2020] Soni: All of my other friends are playing tonight 😂
+[18:50, 9/24/2020] Imraan Sultan: I've been playing on my phone and the other day I got voted off first for no reason at all, two games in a row 😤 I was soooo pissed 🤣
+[18:52, 9/24/2020] Soni: It's cause you're suspicious
+[18:52, 9/24/2020] Imraan Sultan: Lol everyone is sus
+[18:52, 9/24/2020] Soni: Or as the kids are calling it
+[18:52, 9/24/2020] Soni: Sus
+[18:52, 9/24/2020] Imraan Sultan: 🤣
+[19:04, 9/24/2020] Nasiem: When you in your final year of varsity:
+[19:06, 9/24/2020] Leko: Nah Soni is just old🤣
+[19:28, 9/24/2020] Soni: I can't even argue
+[09:17, 9/28/2020] Nic: Greetings all. Can we have a meeting today to see what’s been completed etc?
+[10:15, 9/28/2020] Soni: Is the next sprint due tomorrow?
+[10:34, 9/28/2020] Nic: Ya
+[10:34, 9/28/2020] Nic: So we need to get everything done, meeting today at 2 possibly ?
+[10:34, 9/28/2020] Nic: To see what we need to Finnish ?
+[10:39, 9/28/2020] Soni: We have a pc test so it might have to be later than that
+[10:40, 9/28/2020] Soni: I got the dates wrong so I'm behind on user stories but will have them done in time ofc
+[10:49, 9/28/2020] Nic: Ok 🤙🏼 Maby 5 then ?
+[10:51, 9/28/2020] Nic: We are gona be working late tonight it looks 😂  the only issue I am seeing is that the bar chart and pie chart aren’t displaying due to the mobile responsiveness stuff
+[10:52, 9/28/2020] Leko: Are there 4 charts total?
+[10:52, 9/28/2020] Nic: Ya there should be but only 2 confusion matrecies are displaying
+[10:52, 9/28/2020] Leko: Okay will fix after test
+[10:53, 9/28/2020] Nic: Cool 👌🏼 goodluck on the test lads
+[10:53, 9/28/2020] Leko: Thx
+[15:01, 9/28/2020] Soni: Might need to have the meeting in the evening based on how things are looking
+[15:06, 9/28/2020] Nic: Works for me
+[15:06, 9/28/2020] Nic: Let me know when
+[15:06, 9/28/2020] Nic: I’ll be on all day
+[17:22, 9/28/2020] Nic: Msg when you guys are ready
+[17:54, 9/28/2020] Soni: What is the logistic regression back button supposed to do?
+[18:05, 9/28/2020] Imraan Sultan: So from the "predict student svc" page you can go to the "predict student lgr" page, but there's no option to go back to the "p_s_svc" page from the "p_s_lgr" page.
+[18:05, 9/28/2020] Imraan Sultan: So that's what the buttons suppose to do
+[18:05, 9/28/2020] Imraan Sultan: Hope I make sense
+[18:06, 9/28/2020] Nic: When are we meeting lads ?
+[18:06, 9/28/2020] Imraan Sultan: I think Anthony said 8...
+[18:06, 9/28/2020] Imraan Sultan: Is that fine ?
+[18:06, 9/28/2020] Imraan Sultan: I'm easy
+[18:08, 9/28/2020] Nic: Ya works for me
+[18:11, 9/28/2020] Leko: Maybe, since I've just started my go of the test
+[18:11, 9/28/2020] Leko: Should be fine tho
+[20:12, 9/28/2020] Imraan Sultan: We online
+[20:13, 9/28/2020] Leko: Still writing
+[20:13, 9/28/2020] Leko: It's that last q
+[20:21, 9/28/2020] Nic: I’m coming now
