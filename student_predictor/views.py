@@ -251,6 +251,11 @@ def Research(request):
 def Statistics(request):
     return render(request,'student_predictor/Statistics.html')
 
+def Manual(request):
+    return render(request,'student_predictor/Manual.html')
+def RE(request):
+    return render(request,'student_predictor/RE.html')
+
 def Test(request):
     return render(request,'student_predictor/Test.html')
 
