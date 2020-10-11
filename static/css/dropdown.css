@@ -16,3 +16,12 @@
   color: #FFFFFF !important;
   text-align: center !important;
 }
+
+.dropdown-menu-center {
+  left: 50% !important;
+  right: auto !important;
+  background: #2F1C53 !important;
+  color: #FFFFFF !important;
+  text-align: center !important;
+  transform: translate(-50%, 0) !important;
+}
