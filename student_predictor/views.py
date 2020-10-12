@@ -260,8 +260,8 @@ def RE(request):
 def RE2(request):
     return render(request,'student_predictor/RE2.html')
 
-# def Test(request):
-#     return render(request,'student_predictor/Test.html')
+def Test(request):
+    return render(request,'student_predictor/Test.html')
 
 
 
