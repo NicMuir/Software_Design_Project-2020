@@ -1,0 +1,17 @@
+Sprint Planning Meeting with Client - 1st October 2020
+All members present
+
+Have a page for user cases, examples. 
+Obvious passes, obvious fails and then
+Especially borderline cases, where machine learning is being used in particular. (50 in maths, 60 in comsci etc.)
+Use real world data vs comparisons.
+According to system he should proceed, but in real world he doesn't etc.
+
+Show that you are filling a need with the writeup on the project, can add additional readings from Ritso as reference
+Show how our product is better than predicting results than the requirements for advancing to the next year alone.
+User stories so far:
+1. Create a user manual for the product
+2. Display predicted outcomes vs real-world cases uses (especially borderline cases)
+3. Page explaining how research was carried out and implemented
+
+Videos for usage of website
