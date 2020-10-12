@@ -26,6 +26,7 @@ urlpatterns = [
     path('multipredict/multipredict_lgr/', login_required(views.PredictMultiStudentViewLGR.as_view()), name='predict_multi_student_lgr'),
     path('Research' , views.Research , name = 'Research'),
     path('ResearchExplained' , views.RE , name = 'RE'),
+    path('ResearchExplained2' , views.RE2 , name = 'RE2'),
     path('Statistics' , views.Statistics , name = 'Statistics'),
     path('Manual' , views.Manual , name = 'Manual'),
     path('p_chart', views.chart_data, name='p'),

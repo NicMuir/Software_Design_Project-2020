@@ -67,10 +67,18 @@
             </li>
 
 
-              <li class="nav-item px-lg-4 dropdown">
-              <a class="nav-link text-uppercase text-expanded dropdown-toggle" href="{% url 'student_predictor:RE' %}">Research Explained</a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                  <p>Explination on How Research was Done</p>
+<!--              <li class="nav-item px-lg-4 dropdown">-->
+<!--              <a class="nav-link text-uppercase text-expanded dropdown-toggle" href="{% url 'student_predictor:RE' %}">Research Explained</a>-->
+<!--              <div class="dropdown-menu" aria-labelledby="navbarDropdown2">-->
+<!--                  <p>Explination on How Research was Done</p>-->
+<!--              </div>-->
+<!--            </li>-->
+
+            <li class="nav-item dropdown">
+              <a class="nav-link text-uppercase text-expanded dropdown-toggle"  id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">Research Explained</a>
+              <div class="dropdown-menu dropdown-menu-center" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item nav-link text-uppercase" href="{% url 'student_predictor:RE2' %}" aria-labelledby="navbarDropdown2">Predicted Outcomes Vs Real World Cases</a>
+              <a class="dropdown-item nav-link text-uppercase" href="{% url 'student_predictor:RE' %}" aria-labelledby="navbarDropdown2">How Research was Carried out</a>
               </div>
             </li>
 
