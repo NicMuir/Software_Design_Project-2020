@@ -1,0 +1,71 @@
+[12:55, 7/24/2020] Nic: Ok 29 July 11:15 meeting with Ritso
+[13:35, 7/28/2020] Nic: Changed to 10:45
+[10:15, 7/29/2020] Nic: Lads don’t forget we have a meeting with Ritso in 30 minuts
+[10:16, 7/29/2020] Imraan Sultan: 👌🏻
+[10:17, 7/29/2020] Soni: 👌🏼
+[10:27, 7/29/2020] Nic: https://meet.google.com/fip-teta-tgk
+[10:27, 7/29/2020] Nic: That’s the meet link
+[11:51, 7/29/2020] Imraan Sultan: Sorry for dropping the meet. I had to rush somewhere and forgot to say goodbye 🤦🏻‍♂️😂
+[13:10, 7/29/2020] Nic: This is what I got back. How do I respond ?😂
+[13:21, 7/29/2020] Leko: Hmm... We have to show this to Ritso maybe? Because research != software development
+[13:22, 7/29/2020] Leko: Ritso wants us to code less, they want us to code more it looks like
+[13:24, 7/29/2020] Leko: Unless there's a way to answer research questions using new app features we've developed, but then we need to figure out what features they would be and which questions they would answer
+[13:26, 7/29/2020] Nic: I mean . We could do a forum sort of section
+[13:26, 7/29/2020] Nic: 🤷🏼‍♂️
+[20:37, 7/30/2020] Imraan Sultan: Hows it guys ? I'm not registered to the mailing list for Coms. So just needed to make sure... do we have any quizzes for Parallel Comp?
+[14:52, 7/31/2020] Leko: Not any yet (no submissions), there's the exercises tho
+[22:39, 7/31/2020] Imraan Sultan: Oh thanks Bru 👊🏻😎
+[08:19, 8/4/2020] Nic: Can we meet today lads ?
+[08:19, 8/4/2020] Nic: To get as rolling ?
+[09:49, 8/4/2020] Imraan Sultan: 👌🏻
+[09:49, 8/4/2020] Imraan Sultan: We were suppose to meet yesterday  😂
+[09:50, 8/4/2020] Nic: Yup 😂
+[09:51, 8/4/2020] Nasiem: What time should we meet today? 😂
+[09:57, 8/4/2020] Nic: Maby 11:30 ?
+[10:09, 8/4/2020] Nic: Let me know
+[10:45, 8/4/2020] Nasiem: I can make it
+[10:51, 8/4/2020] Imraan Sultan: Me too
+[10:52, 8/4/2020] Soni: I'll try!
+[11:28, 8/4/2020] Leko: ...shiet, can only do from 12:00
+[11:32, 8/4/2020] Imraan Sultan: So w e meet at 12 ?
+[11:33, 8/4/2020] Nic: I think for those that can meet now. Let’s meet and then we relay what was said to the group ?
+[11:33, 8/4/2020] Imraan Sultan: 👍🏻
+[11:37, 8/4/2020] Nic: Soni ? You gona join.
+[11:37, 8/4/2020] Nic: ?
+[11:39, 8/4/2020] Nic: Email from Ritso :
+[11:40, 8/4/2020] Soni: I'm on my way home, should be there by 12 latest
+[21:37, 8/8/2020] Nic: I have made pickle files for physics and biology so far
+[21:41, 8/8/2020] Soni: User stories almost done, will post them on taiga when finished
+[21:48, 8/8/2020] Imraan Sultan: I got the burger menu working 😁
+[21:50, 8/8/2020] Nic: Is there anything else we need to do ?🤔 other than the
+[21:50, 8/8/2020] Nic: Burger ?😂
+[22:03, 8/8/2020] Imraan Sultan: Lmao 😂 The minimised navigation bar 🍔
+[18:37, 8/10/2020] Soni: Anyone else worked on something I can make a user story for?
+[18:55, 8/10/2020] Leko: "Cam" in quotation marks because Siri knows it's a bullshit course😂
+[18:56, 8/10/2020] Soni: 3:30 is good, we have some time to sort out our research questions before 😂
+[19:14, 8/10/2020] Imraan Sultan: On which day is this ?
+[19:16, 8/10/2020] Soni: Tomorrow
+[20:30, 8/10/2020] Imraan Sultan: 👌🏻
+[14:09, 8/11/2020] Nic: Don’t forget 3:30
+[14:10, 8/11/2020] Leko: Meets link?
+[15:17, 8/11/2020] Nic: https://meet.google.com/vqs-ozmo-bag
+[15:17, 8/11/2020] Leko: Ty ty
+[15:28, 8/11/2020] Imraan Sultan: Has the meet started?
+[15:28, 8/11/2020] Soni: Just myself and Nic in here atm
+[15:29, 8/11/2020] Imraan Sultan: Why no one let me in 😒
+[15:29, 8/11/2020] Imraan Sultan: 😂
+[15:29, 8/11/2020] Soni: 🤔
+[15:30, 8/11/2020] Imraan Sultan: I've been trying to join for the last five min 🙈
+[15:30, 8/11/2020] Imraan Sultan: Please send the link in discord
+[15:34, 8/11/2020] Imraan Sultan: Ta 🙌🏻
+[16:41, 8/11/2020] Nasiem: Network giving problems, had to leave discord
+[16:44, 8/11/2020] Nic: chilled
+[16:50, 8/11/2020] Nic: I think today Ima start with this sprint 😂 pls let me know which days you guys are able to meet with Ritso
+[16:51, 8/11/2020] Imraan Sultan: I'm cool with anyday
+[16:51, 8/11/2020] Imraan Sultan: When is the next Sprint due?
+[16:51, 8/11/2020] Nic: Don’t you guys have a test today
+[16:52, 8/11/2020] Imraan Sultan: Thursday
+[16:52, 8/11/2020] Imraan Sultan: Well for me anyways
+[16:52, 8/11/2020] Nic: This 😂
+[16:52, 8/11/2020] Nic: Ok I’ll organize a meeting with Ritso for Friday . We must get all the research questions done and sent to Anthony.
+[16:52, 8/11/2020] Imraan Sultan: Coolio
