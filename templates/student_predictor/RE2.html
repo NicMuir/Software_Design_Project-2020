@@ -15,8 +15,91 @@
 <body>
   {% include "includes/header.html" %}
     <!-------------------------------------------Navigation Section-------------------------------------->
-    {% include "includes/navbar.html" %}
+  {% include "includes/navbar.html" %}
     <!--------------------------------------------Mid Section/Page Content-------------------------------------->
-    {% include "includes/footer.html" %}
+
+  <h1 class="text-center text-white text-uppercase">Predicted Outcomes Vs Real World Samples </h1>
+  <h2 class="text-center text-white ">In this section we display the accuracy of our model using real world data </h2>
+  <div class = "intro-text left-0 text-center bg-faded p-5 rounded margin-predict" style = "color:black;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
+    Table displaying Our predicted outcomes to that of real world samples
+     <table border="1px solid black" align="centre" width="750">
+         <tr>
+             <th>Category</th>
+             <th>Correct outcome</th>
+             <th>Predicted Outcome</th>
+         </tr>
+
+
+         <tr>
+         <td>Low Risk Student</td>
+         <td>Low Risk</td>
+         <td>Low Risk</td>
+         </tr>
+
+         <tr>
+         <td>Low Risk Student</td>
+         <td>Low Risk</td>
+         <td>Low Risk</td>
+         </tr>
+
+         <tr>
+         <td>Low Risk Student</td>
+         <td>Low Risk</td>
+         <td>Low Risk</td>
+         </tr>
+
+         <tr>
+         <td>Medium Risk Student</td>
+         <td>Medium Risk</td>
+         <td>Medium Risk</td>
+         </tr>
+
+         <tr>
+         <td>Medium Risk Student</td>
+         <td>Medium Risk</td>
+         <td>Medium Risk</td>
+         </tr>
+         <tr>
+         <td>Medium Risk Student</td>
+         <td>Medium Risk</td>
+         <td>Medium Risk</td>
+         </tr>
+
+         <tr>
+         <td>Border Line Student</td>
+         <td>Medium Risk</td>
+         <td>Low Risk</td>
+         </tr>
+
+         <tr>
+         <td>Border Line Student</td>
+         <td>High Risk</td>
+         <td>Low Risk</td>
+         </tr>
+
+         <tr>
+         <td>Border Line Student</td>
+         <td>Low Risk</td>
+         <td>Medium Risk</td>
+         </tr>
+
+
+
+
+
+
+     </table>
+
+
+  </div>
+
+  <div class = "intro-text left-0 text-center bg-faded p-5 rounded margin-predict" style = "color:black;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
+
+      <img src = "http://127.0.0.1:8000/static/img/SDProjDemo-small.gif" loop=infinite>
+
+
+  </div>
+
+  {% include "includes/footer.html" %}
 </body>
 </html>
