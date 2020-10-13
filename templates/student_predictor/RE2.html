@@ -19,6 +19,11 @@
     <!--------------------------------------------Mid Section/Page Content-------------------------------------->
 
   <h1 class="text-center text-white text-uppercase">Predicted Outcomes Vs Real World Samples </h1>
+  <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src = "https://code.highcharts.com/highcharts.js"></script>
+  <script src = "https://code.highcharts.com/highcharts-more.js"></script>
+  <script src = "https://code.highcharts.com/modules/heatmap.js"></script>
+
   <h2 class="text-center text-white ">In this section we display the accuracy of our model using real world data </h2>
   <div class = "intro-text left-0 text-center bg-faded p-5 rounded margin-predict" style = "color:black;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
     Table displaying Our predicted outcomes to that of real world samples
@@ -82,13 +87,84 @@
          <td>Low Risk</td>
          <td>Medium Risk</td>
          </tr>
-
-
-
-
-
-
      </table>
+
+     <div></div>&nbsp;&nbsp;&nbsp;
+
+<div id = "container_4" style="height: 500px; min-width: 310px; max-width: 900px; margin:0 auto; padding: 30px"></div>
+     <script language = "JavaScript">
+        $(document).ready(function() {
+           var chart = {
+              type: 'heatmap',
+              marginTop: 60,
+              marginBottom: 80
+           };
+           var title = {
+              text: 'Confusion Matrix'
+           };
+           var subtitle = {
+              text: 'Prediction Using The Sample Student Data Above'
+           };
+           var xAxis = {
+             title: {
+             enabled: true,
+             text: 'Predicted'
+               },
+              categories: ['H', 'L','M'],
+           };
+           var yAxis = {
+                 title: {
+                 enabled: true,
+                 text: 'Actual'
+                   },
+              categories: ['M', 'L','H'],
+           };
+           var colorAxis = {
+              min: 0,
+              minColor: '#FFFFFF',
+              maxColor: Highcharts.getOptions().colors[0]
+           };
+           var legend = {
+              align: 'right',
+              layout: 'vertical',
+              margin: 0,
+              verticalAlign: 'top',
+              y: 30,
+              symbolHeight: 315
+           };
+           var tooltip = {
+              formatter: function () {
+                 return '<b>' + this.series.yAxis.categories[this.point.x] +
+                 '</b> Predicted <br><b>' +
+                 this.point.value +
+                 '</b> Actual <br><b>' +
+                 this.series.yAxis.categories[this.point.y];
+              }
+           };
+           var series = [{
+              name: 'Data',
+              borderWidth: 1,
+              data: [[0, 0, 0], [1, 0, 1], [2, 0, 3], [0, 1, 0], [1, 1, 3],
+                 [2, 1, 1], [0, 2, 0], [1, 2, 1], [2, 2, 0]],
+              dataLabels: {
+                 enabled: true,
+                 color: '#000000'
+              }
+           }];
+
+           var json = {};
+           json.chart = chart;
+           json.title = title;
+           json.subtitle = subtitle;
+           json.xAxis = xAxis;
+           json.yAxis = yAxis;
+           json.colorAxis = colorAxis;
+           json.legend = legend;
+           json.series = series;
+
+           $('#container_4').highcharts(json);
+        });
+     </script>
 
 
   </div>
