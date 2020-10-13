@@ -263,9 +263,16 @@ def RE2(request):
 def Test(request):
     return render(request,'student_predictor/Test.html')
 
-
+def delete_student(request,pk):
+    entry = Student.objects.get(id=pk)
+    entry.delete()
+    return HttpResponse("Student Has Successfully been deleted! \n Return to previous page")
 
 def chart_data(request):
+
+    #entries = Student.objects.all()
+    #entries.delete()
+
     dataset = Student.objects \
         .values('prediction') \
         .exclude(prediction='') \
