@@ -266,7 +266,9 @@ def Test(request):
 def delete_student(request,pk):
     entry = Student.objects.get(id=pk)
     entry.delete()
-    return HttpResponse("Student Has Successfully been deleted! \n Return to previous page and Refresh.")
+    response = redirect('http://127.0.0.1:8000/students/students/')
+    return response
+
 
 def chart_data(request):
 
