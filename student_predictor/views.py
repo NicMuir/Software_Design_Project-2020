@@ -266,7 +266,7 @@ def Test(request):
 def delete_student(request,pk):
     entry = Student.objects.get(id=pk)
     entry.delete()
-    return HttpResponse("Student Has Successfully been deleted! \n Return to previous page")
+    return HttpResponse("Student Has Successfully been deleted! \n Return to previous page and Refresh.")
 
 def chart_data(request):
 
